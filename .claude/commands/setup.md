@@ -1,15 +1,43 @@
 ---
-description: First-run setup. Interview the swimmer and build their memory files.
+description: Set up the system for a new swimmer, or reconfigure an existing profile.
 ---
 
-You are running the one-time setup for this swim-coaching system. Your job is to interview
-the swimmer, then populate `memory/` (and the swimmer snapshot in CLAUDE.md) so that
-`/plan`, `/log`, and `/review` work for them from the very next session.
+You configure this swim-coaching system. On a first run you interview the swimmer and build
+their `memory/` files (and the swimmer snapshot in CLAUDE.md) from scratch; on a later run
+you make targeted changes to an existing profile without wiping it. Either way, the goal is
+that `/plan`, `/log`, and `/review` work correctly afterwards.
 
 The swimmer's free-form input (may be empty): $ARGUMENTS
 
 Read CLAUDE.md first — it defines the notation, the memory rules, the schemas, and the
 permanent pool/clock constraints. Everything you write must obey it.
+
+## First, detect the mode (safety guard)
+Look at `memory/` and decide which mode you are in. Treat a file as "real data" only if it
+exists, is non-empty, and is NOT still the unedited template/example.
+
+- **FRESH SETUP** — no real data yet (the data files are absent, empty, or still the
+  templates). Run the full interview below and build everything. This is the thorough,
+  build-from-zero pass.
+
+- **RECONFIGURE** — the swimmer is already set up (a populated `current_state.md` /
+  `swimmer_profile.md`, or a non-empty `sessions_scm.jsonl`). Do NOT wipe and rebuild, and
+  do NOT re-run the whole interview. Instead:
+  1. State plainly what you found (e.g. "You already have a profile and N logged sessions")
+     so it is obvious this is not a clean install.
+  2. Ask what they want to change — typically one of: a new goal or training phase, a
+     different pool / units / schedule, a new active skill project, updated benchmarks, or
+     ingesting additional past logs.
+  3. Touch ONLY what they ask for. Preserve all existing data and durable nuance
+     (benchmarks, calibration corrections, evidence-tagged strengths/weaknesses, stated
+     preferences) per the memory rules in CLAUDE.md. Confirm before each write.
+  4. NEVER overwrite or rewrite past lines in `sessions_scm.jsonl` — it is append-only.
+     Additional logs are appended with continuing ids; the raw record is never edited.
+  This pass is deliberately conservative: re-configuration is welcome, wholesale
+  replacement of a working profile is not. When in doubt, ask rather than overwrite.
+
+The interview and write steps below describe the FRESH SETUP pass in full. In RECONFIGURE
+mode, draw on only the parts that match what the swimmer wants to change.
 
 ## How to run the interview
 - Ask in small, logical GROUPS, not one giant wall of questions. Wait for answers before
@@ -84,6 +112,7 @@ place, lean files, no padding.
   reported a real, current constraint; otherwise leave the low-key default.
 
 ## Finish
-Confirm, one line per file, what you created or populated and what you left as a data gap.
-Then tell them they are ready, and to run `/plan <time budget>` for their first session.
-Do NOT prescribe a set here — setup only builds state.
+Confirm, one line per file, what you created, populated, or changed — and what you left as
+a data gap. On a fresh setup, tell them they are ready and to run `/plan <time budget>` for
+their first session; on a reconfigure, confirm only what changed and note that the rest was
+left intact. Do NOT prescribe a set here — setup only builds and adjusts state.

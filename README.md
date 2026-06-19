@@ -40,7 +40,7 @@ The athlete interacts with the system through one onboarding command and three r
 
 | Command | When | What it does |
 | --- | --- | --- |
-| `/setup` | Once, on first run | Interviews you, ingests any previous logs, and builds your personalised memory files. |
+| `/setup` | First run (and to reconfigure) | Interviews you, ingests any previous logs, and builds your personalised memory files. Guarded on later runs so it will not overwrite a working profile. |
 | `/plan` | Before a session | Produces today's set, prescribed and ready to take to the pool. |
 | `/log` | After a session | Records what was actually done and updates every derived view. |
 | `/review` | Weekly, or at a phase boundary | Assesses load, balance, skill progression, and whether the training phase should change. |
@@ -101,7 +101,11 @@ Defined in [`.claude/commands/`](.claude/commands). A one-time `/setup` builds y
 
 ### `/setup`
 
-Run once, on first use. It interviews you — swimming level and background, pool and units, weekly schedule, strengths and limiters, goals, the one skill you want to work on, any health constraints, and whatever benchmarks you already know — asking in small, logical groups rather than as one long form. If you have **previous training logs** (an app export, a spreadsheet, a notebook, or pasted text), it ingests them: each past session is parsed into the log schema, records are extracted into your personal bests, and your current capacity is derived from the result. Sessions from an older pool or unit are kept as a separate, frozen calibration baseline rather than mixed with live data. It then writes every memory file from the templates, personalised to you, and leaves anything you did not know as a clearly-named data gap rather than a fabricated number. Nothing is invented; setup only builds state, it does not prescribe a set.
+Run on first use to build your system, and again later only when you want to reconfigure it.
+
+**First run** is a thorough, build-from-zero pass. It interviews you — swimming level and background, pool and units, weekly schedule, strengths and limiters, goals, the one skill you want to work on, any health constraints, and whatever benchmarks you already know — asking in small, logical groups rather than as one long form. If you have **previous training logs** (an app export, a spreadsheet, a notebook, or pasted text), it ingests them: each past session is parsed into the log schema, records are extracted into your personal bests, and your current capacity is derived from the result. Sessions from an older pool or unit are kept as a separate, frozen calibration baseline rather than mixed with live data. It then writes every memory file from the templates, personalised to you, and leaves anything you did not know as a clearly-named data gap rather than a fabricated number.
+
+**Later runs are guarded.** Setup detects that you are already configured, says so, and switches to a conservative reconfigure mode: it asks what you want to change — a new goal or phase, a different pool or schedule, a new active skill, updated benchmarks, or some additional old logs to ingest — and touches only that, preserving everything else and never editing the append-only raw log. So re-running is safe: it will not silently overwrite a working profile. Nothing is ever invented, and setup only builds or adjusts state — it does not prescribe a set.
 
 ### `/plan`
 
