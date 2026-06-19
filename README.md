@@ -306,4 +306,4 @@ That said, it does not see you swim, and it cannot weigh everything an experienc
 
 ## Licence
 
-No licence has been chosen yet, so all rights are reserved by default. The code is published for reference and review; reuse terms will be decided in due course. If you would like to use any part of this work, please get in touch.
+Released under the [MIT Licence](LICENSE) — you are free to use, modify, and distribute this work, provided the copyright notice is retained. See the [`LICENSE`](LICENSE) file for the full text.
