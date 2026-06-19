@@ -20,7 +20,6 @@ The system is deliberately small, file-based, and transparent. There is no datab
 - [Getting started](#getting-started)
 - [Repository layout](#repository-layout)
 - [Privacy and data](#privacy-and-data)
-- [Documentation](#documentation)
 - [Licence](#licence)
 
 ---
@@ -31,21 +30,22 @@ Most training apps are spreadsheets with a timer bolted on. They store numbers b
 
 This project takes the opposite stance. It treats the athlete's stated feelings as **data, not instructions**, cross-references them against the logged record, and overrides them when the evidence warrants — then explains why. It is built around a single guiding idea: a good coach is firm, expert, and accurately calibrated; never timid, never overshooting.
 
-It is also an exercise in **agent orchestration**. Rather than asking one model to do everything, the work is divided among five narrow specialists, each with a single responsibility, its own tool permissions, and its own model tier. They are composed into deterministic pipelines by three slash-commands. This separation is what keeps the coaching honest: the historian may only report facts, the critic may only approve or reject, and no single agent can both invent a number and act on it.
+It is also an exercise in **agent orchestration**. Rather than asking one model to do everything, the work is divided among five narrow specialists, each with a single responsibility, its own tool permissions, and its own model tier. They are composed into deterministic pipelines by the day-to-day commands. This separation is what keeps the coaching honest: the historian may only report facts, the critic may only approve or reject, and no single agent can both invent a number and act on it.
 
 ---
 
 ## How it works
 
-The athlete interacts with the system through three commands:
+The athlete interacts with the system through one onboarding command and three recurring ones:
 
 | Command | When | What it does |
 | --- | --- | --- |
+| `/setup` | Once, on first run | Interviews you, ingests any previous logs, and builds your personalised memory files. |
 | `/plan` | Before a session | Produces today's set, prescribed and ready to take to the pool. |
 | `/log` | After a session | Records what was actually done and updates every derived view. |
 | `/review` | Weekly, or at a phase boundary | Assesses load, balance, skill progression, and whether the training phase should change. |
 
-Each command spins up a fresh pipeline of agents. Crucially, every agent reads its context from the files in `memory/` rather than from the chat — so a command run in a brand-new terminal produces exactly the same quality of output as one run mid-conversation. The length or history of the surrounding chat has no bearing on the result.
+Each of the recurring commands spins up a fresh pipeline of agents. Crucially, every agent reads its context from the files in `memory/` rather than from the chat — so a command run in a brand-new terminal produces exactly the same quality of output as one run mid-conversation. The length or history of the surrounding chat has no bearing on the result.
 
 ---
 
@@ -97,7 +97,11 @@ If a derived view ever disagrees with the raw log, the log wins.
 
 ## Commands
 
-Defined in [`.claude/commands/`](.claude/commands). Full detail in [`docs/COMMANDS.md`](docs/COMMANDS.md).
+Defined in [`.claude/commands/`](.claude/commands). A one-time `/setup` builds your files; the three recurring commands run your training day to day.
+
+### `/setup`
+
+Run once, on first use. It interviews you — swimming level and background, pool and units, weekly schedule, strengths and limiters, goals, the one skill you want to work on, any health constraints, and whatever benchmarks you already know — asking in small, logical groups rather than as one long form. If you have **previous training logs** (an app export, a spreadsheet, a notebook, or pasted text), it ingests them: each past session is parsed into the log schema, records are extracted into your personal bests, and your current capacity is derived from the result. Sessions from an older pool or unit are kept as a separate, frozen calibration baseline rather than mixed with live data. It then writes every memory file from the templates, personalised to you, and leaves anything you did not know as a clearly-named data gap rather than a fabricated number. Nothing is invented; setup only builds state, it does not prescribe a set.
 
 ### `/plan`
 
@@ -117,7 +121,7 @@ Produces a training review over a named period (default: the last seven sessions
 
 ## Set notation
 
-The coach writes sets in a compact, unambiguous shorthand. Full specification in [`docs/SET-NOTATION.md`](docs/SET-NOTATION.md).
+The coach writes sets in a compact, unambiguous shorthand.
 
 Within a block:
 
@@ -157,7 +161,7 @@ These constraints are enforced by the critic, not left to chance.
 
 ## The memory model
 
-All state is plain text under [`memory/`](memory). Full detail in [`docs/MEMORY-MODEL.md`](docs/MEMORY-MODEL.md).
+All state is plain text under [`memory/`](memory).
 
 There is a strict distinction between the **source of truth** and **derived views**:
 
@@ -204,38 +208,46 @@ A few ideas run through the whole system and are worth calling out, because they
 
 1. **Clone the repository** and open it in your terminal.
 
-2. **Initialise your memory files** from the supplied templates. The real data files are git-ignored, so you create your own private copies:
+2. **Run setup.** This is the recommended path — it interviews you, ingests any previous logs, and writes all of your memory files for you:
 
-   ```sh
-   cp memory/swimmer_profile.template.md  memory/swimmer_profile.md
-   cp memory/current_state.template.md    memory/current_state.md
-   cp memory/phase.template.json          memory/phase.json
-   cp memory/prs.template.json            memory/prs.json
-   cp memory/TRAINING_LOG.template.md     memory/TRAINING_LOG.md
-   touch memory/sessions_scm.jsonl
+   ```
+   /setup
    ```
 
-3. **Fill in your profile.** Edit `memory/swimmer_profile.md` and `memory/current_state.md` with your own identity, benchmarks, preferences, and the one skill you are actively working on. These drive every prescription.
+   Setup creates your private, git-ignored data files from the supplied templates and personalises them to you. If you have prior training records, have them to hand (a file path or text to paste) and setup will format them into the log.
 
-4. **Plan your first session:**
+3. **Plan your first session:**
 
    ```
    /plan 45 minutes, feeling fresh
    ```
 
-5. **After you swim, log it:**
+4. **After you swim, log it:**
 
    ```
    /log felt good, kick set on the boundary, all turns clean
    ```
 
-6. **At the end of the week, review:**
+5. **At the end of the week, review:**
 
    ```
    /review
    ```
 
-The supplied templates are documented inline and show the exact schema each file expects.
+### Setting up by hand (optional)
+
+If you would rather not use `/setup`, copy the templates to their real filenames and edit them yourself. The real data files are git-ignored, so these copies stay private:
+
+```sh
+cp memory/swimmer_profile.template.md  memory/swimmer_profile.md
+cp memory/current_state.template.md    memory/current_state.md
+cp memory/phase.template.json          memory/phase.json
+cp memory/prs.template.json            memory/prs.json
+cp memory/TRAINING_LOG.template.md     memory/TRAINING_LOG.md
+touch memory/sessions_scm.jsonl
+```
+
+The templates are documented inline and show the exact schema each file expects.
 
 ---
 
@@ -253,18 +265,15 @@ ai-swim-coach/
 │   │   ├── coach.md
 │   │   ├── critic.md
 │   │   └── logger.md
-│   └── commands/                 The three slash-commands.
+│   └── commands/                 The slash-commands.
+│       ├── setup.md
 │       ├── plan.md
 │       ├── log.md
 │       └── review.md
-├── docs/
-│   ├── ARCHITECTURE.md           The pipelines and the reasoning behind them.
-│   ├── COMMANDS.md               Detailed behaviour of each command.
-│   ├── SET-NOTATION.md           The full set-notation specification.
-│   └── MEMORY-MODEL.md           File roles, source-of-truth rules, schemas.
 └── memory/
     ├── *.template.*              Documented, empty templates.
-    └── sessions_scm.example.jsonl  One synthetic example session.
+    ├── sessions_scm.example.jsonl  One synthetic example session.
+    └── archive_scy.example.jsonl   One synthetic example archive line.
 ```
 
 ---
@@ -279,17 +288,7 @@ This repository is the **system**, not anyone's training record. That separation
 
 If you adopt this system, your own `memory/` data stays on your machine and out of git by default. Review `.gitignore` before committing if you change the file layout.
 
----
-
-## Documentation
-
-| Document | Subject |
-| --- | --- |
-| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | The agent pipelines, sequencing, and the reasoning behind the design. |
-| [`docs/COMMANDS.md`](docs/COMMANDS.md) | The full behaviour of `/plan`, `/log`, and `/review`. |
-| [`docs/SET-NOTATION.md`](docs/SET-NOTATION.md) | The complete set-notation grammar, with examples. |
-| [`docs/MEMORY-MODEL.md`](docs/MEMORY-MODEL.md) | Every memory file, its role, its schema, and the source-of-truth rules. |
-| [`CLAUDE.md`](CLAUDE.md) | The system specification that governs all agent behaviour. |
+The full system specification — notation, memory rules, and the discipline every agent obeys — lives in [`CLAUDE.md`](CLAUDE.md).
 
 ---
 
