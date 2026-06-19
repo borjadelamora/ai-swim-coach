@@ -1,0 +1,34 @@
+---
+description: Plan today's swim session.
+---
+
+The swimmer wants today's set. Their input: $ARGUMENTS
+(may be just a time budget, or include how they feel — treat feelings as
+data, not orders).
+
+Run the pre-swim pipeline:
+1. Delegate to the historian FIRST: recent load (last ~5 sessions), recent_set_shapes
+   (what's due to vary today), flip-turn recency/status, and patterns. THEN, with the
+   historian's findings in hand, delegate to the physiologist — these run SEQUENTIALLY,
+   because the physiologist reasons from the historian's load summary to set today's
+   prescription. (Use the real session date for the header; if the swimmer didn't state
+   one, use today's date — don't block on it.)
+2. Give the physiologist's prescription + the swimmer's profile + the historian's
+   recent_set_shapes to the coach. Tell the coach to make today's set MEANINGFULLY
+   DIFFERENT in structure from the recent sessions — vary the main work and at least
+   one other block's format, even when the day's purpose repeats — while keeping the
+   purpose, the swimmer's real paces, and all constraints. Have the coach write the session.
+3. Pass the coach's set to the critic VERBATIM — the full readable set AND the
+   cheatsheet, exactly as written, never summarized (paraphrasing it once caused a
+   false "missing cheatsheet" flag). If the critic returns "revise" with any blocker,
+   hand the coach back its OWN prior set verbatim plus ONLY the specific fix, and
+   instruct it to edit just that and reprint everything else unchanged (the coach
+   tends to drift and rewrite unrequested blocks — don't let it). Re-check; if a blocker
+   still remains after that one revision, apply the specific mechanical fix yourself and
+   present — do not loop the coach indefinitely.
+4. Present the final set in plain text exactly as the coach formatted it.
+   Then one line: what to log after (rating + any splits + notes).
+
+Do not water down overrides. If the physiologist and coach decided today
+is hard when the swimmer asked for easy, present that decision with its
+reasoning, not an apology.
