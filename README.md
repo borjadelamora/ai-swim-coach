@@ -20,6 +20,7 @@ The system is deliberately small, file-based, and transparent. There is no datab
 - [Getting started](#getting-started)
 - [Repository layout](#repository-layout)
 - [Privacy and data](#privacy-and-data)
+- [A note on the advice](#a-note-on-the-advice)
 - [Licence](#licence)
 
 ---
@@ -127,24 +128,23 @@ Produces a training review over a named period (default: the last seven sessions
 
 The coach writes sets in a compact, unambiguous shorthand.
 
-Within a block:
+Within a block, a line reads:
 
 ```
 n x distance Stroke <goal @ send-off
 ```
 
-- `<` is the **goal** time — come in under it.
-- `@` is the **send-off** — the interval on the pace clock; leave on it.
-- `nB` denotes breath-controlled rest instead of a clock (e.g. `4x25 Free 4B` is four 25s with four breaths' rest between each).
-- Broken efforts are allowed: a 100 may be written `1x50 + 2x25`.
+| Symbol | Meaning | Example |
+| --- | --- | --- |
+| `n x distance` | `n` repeats of that distance, in metres | `4x25` — four 25s |
+| `Stroke` | the **swim mode**: `Kick` or `Pull`. Plain freestyle is left unlabelled | `4x25 Kick`, `4x50 Pull`, `4x50` (free) |
+| `<goal` | the **goal** time — come in under it | `<:40` — under 40 seconds |
+| `@ send-off` | the **send-off** — the pace-clock interval you leave on, whatever your time | `@ :45` — leave every 45 s |
+| `nB` | breath-controlled rest *instead of* a clock: `n` breaths between reps | `4B` — four breaths' rest |
 
-For example:
+So `4x25 Kick <:40 @ :45` reads as *four 25s of kick, aim to come in under 40 seconds, leaving every 45 seconds* — while `4x25 Free 4B` is *four 25s of freestyle with four breaths' rest between each* (you choose how long a breath is).
 
-```
-4x25 Kick <:40 @ :45
-```
-
-reads as *four 25s of kick, aim to come in under 40 seconds, leaving every 45 seconds.*
+Broken efforts are allowed: a 100 may be written `1x50 + 2x25` — swum as a 50 then two 25s with brief rest, to hold a faster pace than the whole 100 would allow.
 
 Breaks between blocks are marked separately from the within-block send-off:
 
@@ -293,6 +293,14 @@ This repository is the **system**, not anyone's training record. That separation
 If you adopt this system, your own `memory/` data stays on your machine and out of git by default. Review `.gitignore` before committing if you change the file layout.
 
 The full system specification — notation, memory rules, and the discipline every agent obeys — lives in [`CLAUDE.md`](CLAUDE.md).
+
+---
+
+## A note on the advice
+
+This is an AI coach. Like any generative system, its output is not guaranteed to be correct, and it should be read as informed guidance rather than the final word. It is built to earn trust the honest way — it reasons from your own logged record, calibrates to the capacity you have actually demonstrated, checks each set against its own constraints, and is careful to separate what it has measured from what it is only inferring. Used as intended — to generate sessions, keep an honest log, and think through your training — it is a genuinely useful training partner.
+
+That said, it does not see you swim, and it cannot weigh everything an experienced coach standing on the deck can. Listen to your body, apply your own judgement, and for anything involving pain, injury, or health, treat a qualified coach or clinician as the authority. If their guidance and the app's ever disagree, follow theirs.
 
 ---
 
