@@ -1,0 +1,27 @@
+# --- Private training data -------------------------------------------------
+# The system is published; an individual's training record is NOT. The real
+# memory files are kept out of version control. Only the *.template.* files and
+# the *.example.* files are tracked. If you adopt this system, your own data
+# below stays local by default.
+memory/sessions_scm.jsonl
+memory/archive_scy.jsonl
+memory/current_state.md
+memory/swimmer_profile.md
+memory/prs.json
+memory/phase.json
+memory/TRAINING_LOG.md
+
+# Explicitly keep the templates and the synthetic examples tracked.
+!memory/*.template.md
+!memory/*.template.json
+!memory/*.example.jsonl
+
+# --- OS / editor cruft -----------------------------------------------------
+.DS_Store
+**/.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# --- Local Claude Code state ----------------------------------------------
+.claude/settings.local.json

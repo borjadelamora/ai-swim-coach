@@ -1,0 +1,16 @@
+{
+  "_comment": "TEMPLATE — copy to phase.json and fill in. Periodisation state. Rewritten by the logger only on a phase transition, new microcycle, or changed constraint (a /review trigger). Mesocycle ~3-6 weeks; recovery microcycle every ~3-4 weeks of loading.",
+  "last_updated": "YYYY-MM-DD",
+  "macrocycle": "<the season-level context, e.g. off-season, no fixed target meet yet>",
+  "current_phase": "<base | build | peak | recover, with an optional descriptor>",
+  "phase_week": 1,
+  "microcycle_note": "<a few sentences on what this block is doing and why, and what the next block should do>",
+  "active_constraints": [
+    "Send-offs: :15 multiples only.",
+    "Finish every block on the start wall (block totals are multiples of 50m).",
+    "<any other current constraint>"
+  ],
+  "primary_focus": "<the main adaptation this phase is chasing>",
+  "secondary_focus": "<what to maintain alongside the primary focus>",
+  "transition_trigger": "<the explicit, measurable condition that must be met to advance to the next phase>"
+}
