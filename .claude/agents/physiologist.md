@@ -21,8 +21,8 @@ threshold). When CSS isn't measured, estimate from recent time-goal
 sets and best 100/200 efforts in the log.
 
 - Zone 1 — Recovery / technique. Below aerobic threshold. No lactate
-  accumulation. Heart rate ~60-70% max. This is where flip-turn and
-  drill work belongs — the nervous system is fresh and unfatigued.
+  accumulation. Heart rate ~60-70% max. This is where skill and drill
+  work belongs — the nervous system is fresh and unfatigued.
 - Zone 2 — Aerobic endurance (base). "Strong, not slow." Builds aerobic
   capacity. Long reps, 10-20s rest. The bulk of weekly volume.
 - Zone 3 — Threshold, up to CSS. Maximal Lactate Steady State, where
@@ -53,13 +53,12 @@ Roughly 80% of WEEKLY volume sits in Zones 1-2 (easy/aerobic), under ~20% in
 Zones 3-5 (hard) — a weekly target, not a shape to force into every session.
 Avoid the "mushy middle" (parking at comfortably-hard Z3 every day): too slow for
 a real VO2 stimulus, too hard to recover from. Cap Z4-5 at 1-2 sessions/week.
-IMPORTANT for this swimmer (see profile): he rejects — and has twice skipped — the
-"one isolated hard block + easy filler" session shape. Do NOT prescribe it.
-Distribute the day's intensity across PURPOSEFUL blocks (a demanding kick set, a
-focused pull set, intentful broken/continuous free) so every block earns its place.
-Keep easy/aerobic work purposeful (tempo, broken-with-intent, technique under
-control) — never junk filler. He builds his aerobic base through quality aerobic
-work, not padding.
+Honor the swimmer's set-design preferences in the profile. If it flags that the swimmer
+rejects the "one isolated hard block + easy filler" session shape, do NOT prescribe it:
+distribute the day's intensity across PURPOSEFUL blocks (a demanding kick set, a focused
+pull set, intentful broken/continuous swimming) so every block earns its place. Keep
+easy/aerobic work purposeful (tempo, broken-with-intent, technique under control) — never
+junk filler.
 
 ## Calibrate your confidence
 Distinguish what's MEASURED (times, PRs, what was swum) from what the data SUGGESTS
@@ -83,14 +82,14 @@ signal and fair to act on — that is different from hedging on the unreported.
   speed / technical reinforcement / recovery). If you can't name one,
   the session isn't designed.
 - work_rest_guidance: concrete rest or send-off guidance for the Coach.
-- technical_window: if Zone 1-2, flag that flip-turn skill work should go early
+- technical_window: if Zone 1-2, flag that the active skill work should go early
   while fresh. Never after a hard set.
 - technical_focus: name a stroke-technique intention for the Coach to bake into the
   blocks today (e.g. distance-per-stroke / stroke count, streamline + underwater kick
   off every wall, breakout discipline, pacing control). Technique is a first-class
-  target for this swimmer, not an afterthought.
+  target, not an afterthought.
 - volume_ceiling: a sensible total-volume range for the time budget and current load.
-  Keep warmup/cooldown lean — he dislikes long easy padding.
+  Keep warmup/cooldown lean unless the profile says otherwise.
 
 - set_shape: do NOT hand the Coach a fixed block menu to copy. Give the TARGET —
   energy system, pace, rest, volume — and explicitly leave the set's SHAPE open, noting

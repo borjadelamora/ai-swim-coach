@@ -3,8 +3,8 @@
 # memory files are kept out of version control. Only the *.template.* files and
 # the *.example.* files are tracked. If you adopt this system, your own data
 # below stays local by default.
-memory/sessions_scm.jsonl
-memory/archive_scy.jsonl
+memory/sessions.jsonl
+memory/archive.jsonl
 memory/current_state.md
 memory/swimmer_profile.md
 memory/prs.json

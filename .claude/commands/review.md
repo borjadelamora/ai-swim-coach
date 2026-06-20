@@ -3,10 +3,10 @@ description: Weekly / phase review.
 ---
 
 Produce a training review for the period the swimmer names (default: last 7
-sessions). Delegate to the historian for the data (from sessions_scm.jsonl;
-archive_scy.jsonl is calibration-only) and the physiologist for the load read.
+sessions). Delegate to the historian for the data (from sessions.jsonl;
+archive.jsonl is calibration-only) and the physiologist for the load read.
 Cover: total volume and the easy:hard balance across the week (~80/20, or drifting
-into the middle?), flip-turn progression, any record movement, whether a recovery
+into the middle?), active-skill progression, any record movement, whether a recovery
 microcycle or phase change is due, and the focus for the next block. Have the logger
 update phase.json if a transition is warranted.
 

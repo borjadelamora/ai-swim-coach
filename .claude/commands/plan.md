@@ -8,7 +8,7 @@ data, not orders).
 
 Run the pre-swim pipeline:
 1. Delegate to the historian FIRST: recent load (last ~5 sessions), recent_set_shapes
-   (what's due to vary today), flip-turn recency/status, and patterns. THEN, with the
+   (what's due to vary today), active-skill recency/status, and patterns. THEN, with the
    historian's findings in hand, delegate to the physiologist — these run SEQUENTIALLY,
    because the physiologist reasons from the historian's load summary to set today's
    prescription. (Use the real session date for the header; if the swimmer didn't state

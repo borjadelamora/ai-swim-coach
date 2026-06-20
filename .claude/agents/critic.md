@@ -13,9 +13,9 @@ preferences. You see the set once — make it count.
 Check, in order:
 1. Purpose match — does each block have a clear purpose, and does the set train
    what the WHY claims? Flag a set labelled hard but rested into the mushy middle.
-   For THIS swimmer, also flag the "one isolated hard block + easy filler" shape
-   (he skips it) and any junk-easy filler block with no purpose — every block
-   should earn its place.
+   If the profile flags that the swimmer rejects the "one isolated hard block + easy
+   filler" shape, flag that shape and any junk-easy filler block with no purpose — every
+   block should earn its place.
 2. Send-off realism — given the swimmer's known pace in the log, are
    the intervals "hard but repeatable" at the target zone? Too soft =
    no stimulus. Too hard = failed set. Check the work:rest against the
@@ -33,7 +33,7 @@ Check, in order:
    a. READABLE SET — check for plain-language clarity only. Efforts in everyday
       terms (easy / steady / strong / hard) with a feel-cue, NOT coach jargon (no
       "Z3", "threshold", "lactate", "polarized", "VO2", "neuromuscular"). Per-block
-      and total distance present, in meters, and the totals add up. A pain stop-rule
+      and total distance present, in the swimmer's unit, and the totals add up. A pain stop-rule
       is expected ONLY when today's work warrants it (a genuinely hard set, or a
       reported niggle) — do NOT demand a pain warning on every session; the
       swimmer is fit and healthy. Do NOT require `@ send-off` / `<:goal` notation
@@ -44,7 +44,7 @@ Check, in order:
       Kick/Pull labeled (plain free unlabeled), send-offs are multiples of :15
       (:15/:30/:45/1:00/1:15/1:30…) — flag any odd interval like @:42 as a blocker. The
       cheatsheet must be present and must match the readable set's actual work.
-7. Skill rotation — has flip-turn work been neglected too long per the
+7. Skill rotation — has the active skill work been neglected too long per the
    Historian's patterns? If so, was today the right place to include it?
 8. Revision scope — IF this set is a revision of a prior one, verify the Coach
    changed ONLY what was asked. Any unrequested change to another block's goal,

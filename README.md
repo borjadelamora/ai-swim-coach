@@ -104,7 +104,7 @@ Defined in [`.claude/commands/`](.claude/commands). A one-time `/setup` builds y
 
 Run on first use to build your system, and again later only when you want to reconfigure it.
 
-**First run** is a thorough, build-from-zero pass. It interviews you — swimming level and background, pool and units, weekly schedule, strengths and limiters, goals, the one skill you want to work on, any health constraints, and whatever benchmarks you already know — asking in small, logical groups rather than as one long form. If you have **previous training logs** (an app export, a spreadsheet, a notebook, or pasted text), it ingests them: each past session is parsed into the log schema, records are extracted into your personal bests, and your current capacity is derived from the result. Sessions from an older pool or unit are kept as a separate, frozen calibration baseline rather than mixed with live data. It then writes every memory file from the templates, personalised to you, and leaves anything you did not know as a clearly-named data gap rather than a fabricated number.
+**First run** is a thorough, build-from-zero pass. It interviews you — your level and background, your pool and course (length, and metres or yards), the strokes you swim, your weekly schedule, strengths and limiters, goals, the one skill you most want to work on (a turn, a stroke to learn or refine, starts, underwater kick, a breathing pattern, or pacing), any health constraints, and whatever benchmarks you already know — asking in small, logical groups rather than as one long form. If you have **previous training logs** (an app export, a spreadsheet, a notebook, or pasted text), it ingests them: each past session is parsed into the log schema, records are extracted into your personal bests, and your current capacity is derived from the result. Sessions from an older pool or unit are kept as a separate, frozen calibration baseline rather than mixed with live data. It then writes every memory file from the templates, personalised to you, and leaves anything you did not know as a clearly-named data gap rather than a fabricated number.
 
 **Later runs are guarded.** Setup detects that you are already configured, says so, and switches to a conservative reconfigure mode: it asks what you want to change — a new goal or phase, a different pool or schedule, a new active skill, updated benchmarks, or some additional old logs to ingest — and touches only that, preserving everything else and never editing the append-only raw log. So re-running is safe: it will not silently overwrite a working profile. Nothing is ever invented, and setup only builds or adjusts state — it does not prescribe a set.
 
@@ -136,7 +136,7 @@ n x distance Stroke <goal @ send-off
 
 | Symbol | Meaning | Example |
 | --- | --- | --- |
-| `n x distance` | `n` repeats of that distance, in metres | `4x25` — four 25s |
+| `n x distance` | `n` repeats of that distance, in your pool's unit | `4x25` — four 25s |
 | `Stroke` | the **swim mode**: `Kick` or `Pull`. Plain freestyle is left unlabelled | `4x25 Kick`, `4x50 Pull`, `4x50` (free) |
 | `<goal` | the **goal** time — come in under it | `<:40` — under 40 seconds |
 | `@ send-off` | the **send-off** — the pace-clock interval you leave on, whatever your time | `@ :45` — leave every 45 s |
@@ -157,7 +157,7 @@ Breaks between blocks are marked separately from the within-block send-off:
 Two **permanent** format rules encode the geometry of the pool and the pace clock:
 
 - **Send-offs are multiples of :15** (`:15 / :30 / :45 / 1:00 / 1:15 …`), because the clock is tracked in fifteen-second increments.
-- **Every block finishes on the start wall.** In a 25 m pool this means each block's total distance is a multiple of 50 m, so the swimmer is never stranded at the far wall during a break.
+- **Every block finishes on the start wall.** Each block's total distance is a multiple of two pool lengths (50 m in a 25 m pool, 50 yd in a 25 yd pool, 100 m in a 50 m pool), so the swimmer is never stranded at the far wall during a break.
 
 These constraints are enforced by the critic, not left to chance.
 
@@ -171,8 +171,8 @@ There is a strict distinction between the **source of truth** and **derived view
 
 | File | Role | Status |
 | --- | --- | --- |
-| `sessions_scm.jsonl` | The live training log — one JSON object per session, append-only, facts only. | **Source of truth** |
-| `archive_scy.jsonl` | A frozen archive from a prior tool, kept for calibration only. | **Source of truth** (frozen) |
+| `sessions.jsonl` | The live training log — one JSON object per session, append-only, facts only. | **Source of truth** |
+| `archive.jsonl` | An optional frozen baseline of older logs, kept for calibration only. | **Source of truth** (frozen) |
 | `current_state.md` | Current capacity: benchmarks, bounds, and the next allowable progression. | Derived |
 | `swimmer_profile.md` | The durable athlete profile: identity, the active skill project, set-design preferences, safety notes. | Derived |
 | `prs.json` | Personal records. | Derived |
@@ -181,7 +181,7 @@ There is a strict distinction between the **source of truth** and **derived view
 
 The raw logs are the irreplaceable record; every derived view can be rebuilt from them if it drifts or is lost. This is why the logger always writes the raw line first and never edits a past line.
 
-Two units coexist by design. The frozen archive is in short-course **yards**; live training is in short-course **metres**. A 25 m length is roughly 9% longer than 25 yd, so yard times run about 10–11% faster than the equivalent metre times. The system keeps the two explicitly tagged and never compares them without applying the conversion — a small but realistic detail that prevents a whole class of silent errors.
+Your **course** (pool length and unit) is chosen at setup: short-course metres (25 m), short-course yards (25 yd), or long-course metres (50 m). Every figure is tagged with it. If you import older logs from a different course, they are kept as a separate, frozen archive and never compared with live data without applying the conversion — a small but realistic detail that prevents a whole class of silent errors.
 
 ---
 
@@ -248,7 +248,7 @@ cp memory/current_state.template.md    memory/current_state.md
 cp memory/phase.template.json          memory/phase.json
 cp memory/prs.template.json            memory/prs.json
 cp memory/TRAINING_LOG.template.md     memory/TRAINING_LOG.md
-touch memory/sessions_scm.jsonl
+touch memory/sessions.jsonl
 ```
 
 The templates are documented inline and show the exact schema each file expects.
@@ -276,8 +276,8 @@ ai-swim-coach/
 │       └── review.md
 └── memory/
     ├── *.template.*              Documented, empty templates.
-    ├── sessions_scm.example.jsonl  One synthetic example session.
-    └── archive_scy.example.jsonl   One synthetic example archive line.
+    ├── sessions.example.jsonl    One synthetic example session.
+    └── archive.example.jsonl     One synthetic example archive line.
 ```
 
 ---
@@ -288,7 +288,7 @@ This repository is the **system**, not anyone's training record. That separation
 
 - **No real performance data is included.** The files that would hold an individual's history, benchmarks, and records are listed in [`.gitignore`](.gitignore) and are never committed.
 - **Templates ship in their place.** Every memory file has a `*.template.*` counterpart that documents its schema with placeholder values only.
-- **One example, clearly synthetic.** `memory/sessions_scm.example.jsonl` contains a single fabricated session purely to illustrate the log schema. It is not real.
+- **One example, clearly synthetic.** `memory/sessions.example.jsonl` contains a single fabricated session purely to illustrate the log schema. It is not real.
 
 If you adopt this system, your own `memory/` data stays on your machine and out of git by default. Review `.gitignore` before committing if you change the file layout.
 

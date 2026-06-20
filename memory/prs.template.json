@@ -1,15 +1,15 @@
 {
-  "_comment": "TEMPLATE — copy to prs.json and fill in. Personal records, each tagged by pool ('SCY' = 25yd archive, 'SCM' = live 25m). A 25m length is ~9% longer, so equivalent SCM times run ~10-11% slower; never compare across pools without the conversion. Updated by the logger only when a record falls.",
-  "units": "All PRs are tagged by pool ('SCY' = 25yd archive, 'SCM' = live 25m). Do not compare across pools without the conversion.",
+  "_comment": "TEMPLATE — copy to prs.json and fill in. Personal records, each tagged by course (e.g. 'SCM' = 25 m, 'SCY' = 25 yd, 'LCM' = 50 m). Never compare across courses without converting. Updated by the logger only when a record falls.",
+  "units": "All PRs are tagged by course. Do not compare across courses without the conversion.",
   "last_updated": "YYYY-MM-DD",
   "note": "Times are best observed in training, not necessarily official. '<' means 'came in under'. Dive/board times noted separately from push times.",
   "timed_prs": {
-    "25_free_sprint_push_SCM": { "time": ":XX", "pool": "SCM", "from": "<date and context>" },
-    "50_free_SCM": { "time": ":XX", "pool": "SCM", "from": "<date and context>" },
-    "100_free_SCM": { "time": "X:XX", "pool": "SCM", "from": "<date and context>" }
+    "25_free_sprint_push": { "time": ":XX", "pool": "<course>", "from": "<date and context>" },
+    "50_free": { "time": ":XX", "pool": "<course>", "from": "<date and context>" },
+    "100_free": { "time": "X:XX", "pool": "<course>", "from": "<date and context>" }
   },
   "distance_milestones": {
-    "longest_continuous_SCM": { "distance": 0, "pool": "SCM", "from": "<date and context>" }
+    "longest_continuous": { "distance": 0, "pool": "<course>", "from": "<date and context>" }
   },
   "css_estimate": {
     "value": "<sustainable aerobic pace estimate, e.g. ~X:XX/50>",

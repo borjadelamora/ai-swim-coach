@@ -10,16 +10,16 @@ role: Slow-changing identity, tendencies, the active skill project, set-design p
 and safety. For current numbers (benchmarks, bounds) read current_state.md, not this file.
 
 memory map:
-- current_state.md   → capacity now (numbers + bounds). Logger rewrites it.
-- sessions_scm.jsonl → live log, short-course METRES (25m). Append-only, facts only.
-- archive_scy.jsonl  → FROZEN 25yd archive (prior tool). Calibration-only; never edit.
-- TRAINING_LOG.md    → human glance view (one row per session).
+- current_state.md → capacity now (numbers + bounds). Logger rewrites it.
+- sessions.jsonl   → live log, in your configured course. Append-only, facts only.
+- archive.jsonl    → OPTIONAL frozen older baseline. Calibration-only; never edit.
+- TRAINING_LOG.md  → human glance view (one row per session).
 - prs.json, phase.json → records and periodisation.
 
 ## Snapshot
-<One or two lines: who the swimmer is, where they train, their broad strengths, and the
-single biggest limiter to build. Name the ONE active skill project. Note any skill that is
-already mastered and therefore retired from the targets.>
+<One or two lines: who the swimmer is, their level, the course they train in, the strokes
+they swim, their broad strengths, and the single biggest limiter to build. Name the ONE
+active skill project. Note any skill already mastered and therefore retired from the targets.>
 
 ## Strengths (evidence)
 - <Strength> — <the measured evidence that supports it, with a date>.
@@ -46,8 +46,8 @@ already mastered and therefore retired from the targets.>
 4. <e.g. don't repeat recent sessions; vary reps, distances, and formats>.
 5. <e.g. how to build the aerobic base — broken/nB sets at real pace, not big continuous swims>.
 6. <Technique-by-design preferences.>
-7. Finish on the starting wall — every block's total is a multiple of 50m (permanent rule
-   in CLAUDE.md).
+7. Finish on the starting wall — every block's total is a multiple of two pool lengths
+   (permanent rule in CLAUDE.md).
 
 ## Response to intensity
 <How the swimmer responds to load: where the ceiling is, how they recover, whether their

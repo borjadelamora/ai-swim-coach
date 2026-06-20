@@ -1,1 +1,0 @@
-{"seq": 1, "pool": "SCY", "note": "EXAMPLE — frozen 25yd archive line from a prior tool. Calibration-only; never edited or appended to in normal use. Replace with your own archive, or leave empty if you have none.", "blocks": [{"set": "200 Free easy", "yd": 200}, {"set": "6x50 Free 10B", "yd": 300}, {"set": "100 Free easy", "yd": 100}], "total_yd": 600}

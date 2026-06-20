@@ -7,7 +7,7 @@
   "microcycle_note": "<a few sentences on what this block is doing and why, and what the next block should do>",
   "active_constraints": [
     "Send-offs: :15 multiples only.",
-    "Finish every block on the start wall (block totals are multiples of 50m).",
+    "Finish every block on the start wall (block totals are multiples of two pool lengths).",
     "<any other current constraint>"
   ],
   "primary_focus": "<the main adaptation this phase is chasing>",
