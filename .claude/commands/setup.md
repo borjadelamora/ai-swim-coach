@@ -109,3 +109,5 @@ Confirm, one line per file, what you created, populated, or changed — and what
 a data gap. On a fresh setup, tell them they are ready and to run `/plan <time budget>` for
 their first session; on a reconfigure, confirm only what changed. Do NOT prescribe a set
 here — setup only builds and adjusts state.
+
+Once setup is complete, this chat is safe to clear — every command starts fresh from memory/.

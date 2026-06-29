@@ -16,6 +16,7 @@ The system is deliberately small, file-based, and transparent. There is no datab
 - [Commands](#commands)
 - [Set notation](#set-notation)
 - [The memory model](#the-memory-model)
+- [Clearing the chat between commands](#clearing-the-chat-between-commands)
 - [Design principles](#design-principles)
 - [Getting started](#getting-started)
 - [Repository layout](#repository-layout)
@@ -182,6 +183,20 @@ There is a strict distinction between the **source of truth** and **derived view
 The raw logs are the irreplaceable record; every derived view can be rebuilt from them if it drifts or is lost. This is why the logger always writes the raw line first and never edits a past line.
 
 Your **course** (pool length and unit) is chosen at setup: short-course metres (25 m), short-course yards (25 yd), or long-course metres (50 m). Every figure is tagged with it. If you import older logs from a different course, they are kept as a separate, frozen archive and never compared with live data without applying the conversion — a small but realistic detail that prevents a whole class of silent errors.
+
+---
+
+## Clearing the chat between commands
+
+Every command rebuilds its own context from the files in `memory/`. The agents do not read the conversation above them, so once a command has finished and saved its work, the chat history serves no further purpose. Leaving it to grow is in fact harmful: the more text the model must take in each turn, the more thinly its attention is spread, and earlier detail is diluted. Starting each command from an empty chat keeps every run as sharp as the first.
+
+So after any command that writes to `memory/`, clear the conversation before running the next one:
+
+1. Run `/setup`, `/log`, or `/review`, and wait for it to confirm what it wrote.
+2. Run `/clear`. This command is built into Claude Code: it empties the conversation but leaves your files untouched.
+3. Run the next command. It reads the current state from `memory/` and begins clean.
+
+`/plan` only reads the files and changes nothing, so there is nothing to lose by clearing after it as well. The natural moment to clear is at the end of a session's cycle, once `/log` has saved the work. The commands themselves remind you of this on completion.
 
 ---
 

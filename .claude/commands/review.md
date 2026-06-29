@@ -20,3 +20,5 @@ supports) from what can't be pinned down yet, and say how much backs each. A thi
 once is not yet a pattern; a thing seen every session is — don't harden a one- or
 two-session read into a firm conclusion. Pain/fatigue default: if the swimmer didn't
 report any, there is none — do not list it as a data gap.
+
+Once the review is done, this chat is safe to clear — the next command starts fresh from memory/.

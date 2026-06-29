@@ -17,3 +17,5 @@ outputs disagree, say so — but don't over-read one session: call a single-sess
 observation what it is, and let trends harden as they repeat. Pain/fatigue default: if
 the swimmer didn't mention pain or fatigue, there is none — never log it as unknown or
 flag it as a gap.
+
+Once logged, this chat is safe to clear — the next command starts fresh from memory/.
