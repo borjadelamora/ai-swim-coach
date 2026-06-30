@@ -7,13 +7,14 @@ The swimmer wants today's set. Their input: $ARGUMENTS
 data, not orders).
 
 Run the pre-swim pipeline:
-1. Delegate to the historian FIRST: recent load (last ~5 sessions), recent_set_shapes
-   (what's due to vary today), active-skill recency/status, patterns, and benchmark recency
-   (when a measurable effort for the focus quality is due). THEN, with the historian's
-   findings in hand, delegate to the physiologist — these run SEQUENTIALLY, because the
-   physiologist reads current_state.md + phase.json (the periodization frame) and reasons
-   from the historian's load summary to set today's prescription. (Use the real session
-   date for the header; if the swimmer didn't state one, use today's date — don't block on it.)
+1. Delegate to the historian FIRST — and GIVE IT today's date (the session date): recent load
+   (last ~5 sessions), recent_set_shapes (what's due to vary today), active-skill recency/status,
+   patterns, benchmark recency (when a measurable effort for the focus quality is due), and DAYS
+   SINCE THE LAST LOGGED SESSION (last session -> today) so the recovery read is anchored to now.
+   THEN, with the historian's findings in hand, delegate to the physiologist — these run
+   SEQUENTIALLY, because the physiologist reads current_state.md + phase.json (the periodization
+   frame) and reasons from the historian's load summary to set today's prescription. (Use the real
+   session date for the header; if the swimmer didn't state one, use today's date — don't block on it.)
 2. Give the physiologist's prescription + the swimmer's profile + the historian's
    recent_set_shapes to the coach. Tell the coach to make today's set MEANINGFULLY
    DIFFERENT in structure from the recent sessions — vary the main work and at least
@@ -21,7 +22,9 @@ Run the pre-swim pipeline:
    purpose, the swimmer's real paces, and all constraints. Have the coach write the session.
 3. Pass the coach's set to the critic VERBATIM — the full readable set AND the
    cheatsheet, exactly as written, never summarized (paraphrasing it once caused a
-   false "missing cheatsheet" flag). If the critic returns "revise" with any blocker,
+   false "missing cheatsheet" flag) — together with the physiologist's brief (incl the
+   today_envelope: recovery_verdict, load_target, anti_monotony) so the critic can check
+   envelope-fit and the recovery verdict. If the critic returns "revise" with any blocker,
    hand the coach back its OWN prior set verbatim plus ONLY the specific fix, and
    instruct it to edit just that and reprint everything else unchanged (the coach
    tends to drift and rewrite unrequested blocks — don't let it). Re-check; if a blocker

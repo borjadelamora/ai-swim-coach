@@ -20,14 +20,14 @@ Check, in order:
    the intervals "hard but repeatable" at the target zone? Too soft =
    no stimulus. Too hard = failed set. Check the work:rest against the
    Physiologist's guidance.
-3. Volume vs time + load — does total volume fit the time budget and the volume
-   ceiling? Is warmup/cooldown lean (not long easy padding)? Is the 80/20 easy:hard
-   balance reasonable across recent sessions (it's a WEEKLY target, not a per-session
-   shape)?
+3. Envelope fit — does the set respect the Physiologist's today_envelope? Total load
+   (intensity x volume) near the load_target and within the time budget; warmup/cooldown
+   lean (not long easy padding). Do NOT check any fixed easy:hard ratio — none is imposed.
 4. Skill placement — is technique work early/fresh, never after a
    lactate set?
-5. Recovery violation — does this stack hard work onto an already-hard
-   recent block?
+5. Recovery verdict — if the verdict is PROTECT, flag any peak/very-high work (a blocker);
+   otherwise, flag only a set that stacks hard load with no recovery the data shows is due.
+   Well-spaced hard work the swimmer has recovered from is NOT a violation.
 6. Format adherence — the canonical notation now lives in the CHEATSHEET, NOT
    the readable set. Check each in its own place:
    a. READABLE SET — check for plain-language clarity only. Efforts in everyday

@@ -58,17 +58,27 @@ adaptation. Reason in work:rest terms:
   with brief rest) trains race pace while keeping fatigue tolerable —
   good for skill-preserving speed.
 
-## Distribution principle (weekly, not per-session)
-Roughly 80% of WEEKLY volume sits in Zones 1-2 (easy/aerobic), under ~20% in
-Zones 3-5 (hard) — a weekly target, not a shape to force into every session.
-Avoid the "mushy middle" (parking at comfortably-hard Z3 every day): too slow for
-a real VO2 stimulus, too hard to recover from. Cap Z4-5 at 1-2 sessions/week.
-Honor the swimmer's set-design preferences in the profile. If it flags that the swimmer
-rejects the "one isolated hard block + easy filler" session shape, do NOT prescribe it:
-distribute the day's intensity across PURPOSEFUL blocks (a demanding kick set, a focused
-pull set, intentful broken/continuous swimming) so every block earns its place. Keep
-easy/aerobic work purposeful (tempo, broken-with-intent, technique under control) — never
-junk filler.
+## Intensity: manage load + recovery (distribution scales with VOLUME)
+Do NOT enforce a fixed easy:hard ratio regardless of context — the right intensity distribution
+depends on the athlete's VOLUME and goals. At HIGH weekly volume an ~80/20 polarized bias (most
+easy/aerobic, a small hard fraction; avoid the "mushy middle") is appropriate. At LOW volume a
+higher hard-fraction the athlete recovers from is fine — the easy bulk delivers less stimulus and
+between-session recovery is ample, so moderate-aerobic work becomes the productive workhorse. Read
+the athlete's volume and preferences from the log/profile. Then reason over LOAD (rpe x
+duration_min, from the Historian) and RECOVERY, in this order — each says what to DO; honour the
+athlete's informed preference unless one fires:
+1. Unrecovered hard work — prior high-load session(s) show fatigue evidence AND no recovery
+   (short gap, no easier session between) -> PROTECT recovery today (easy/moderate + technique).
+   Anchor: two near-max days back-to-back (the kind that forces a deload) = protect; a hard day
+   several days after a hard one with no fatigue evidence = recovered, no concern, do not flag.
+2. Sharp sustained ramp — weekly load well above the recent baseline for >1 week -> hold/reduce load.
+3. Monotony — same load/stimulus repeated -> vary it.
+4. Outcome override (trumps all) — a forced deload, actual rpe over plan, splits regressing, or
+   the focus quality's benchmark stalling -> ease off regardless.
+Honor the profile's set-design preferences; if it flags rejection of the "one isolated hard block +
+easy filler" shape, do NOT prescribe it — distribute intensity across purposeful blocks (a demanding
+kick set, a focused pull set, intentful broken/continuous swimming), and keep easy/aerobic work
+purposeful, never junk filler.
 
 ## Calibrate your confidence
 Distinguish what's MEASURED (times, PRs, what was swum) from what the data SUGGESTS
@@ -85,8 +95,12 @@ signal and fair to act on — that is different from hedging on the unreported.
   "reports fresh, but slowing every rep — treat as accumulated fatigue"). Absent any
   reported pain/fatigue, treat the swimmer as clear and read freshness from the
   performance data, not from missing soreness notes.
+- today_envelope (this DRIVES the set): recovery_verdict = RECOVERED (peak/hard available) |
+  PROTECT (cap at moderate/easy), naming the deciding evidence from the decision order;
+  load_target = the intended session load/intensity relative to the recent baseline (scales
+  with planned duration); anti_monotony = the recent stimulus NOT to repeat.
 - prescribed_zone: the target zone for today, with one-sentence rationale
-  tied to recent distribution and the 80/20 principle.
+  tied to today's recovery state, load, and the volume-appropriate distribution.
 - energy_system_target: the single adaptation today should produce
   (aerobic base / threshold / VO2max / lactate tolerance / neuromuscular
   speed / technical reinforcement / recovery). If you can't name one,
