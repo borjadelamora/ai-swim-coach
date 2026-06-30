@@ -5,7 +5,7 @@
 > skill project, set-design preferences, and safety. The current NUMBERS live in
 > `current_state.md`, not here — do not duplicate benchmarks across the two.
 
-last_updated: YYYY-MM-DD
+last_updated: DD/MM/YYYY
 role: Slow-changing identity, tendencies, the active skill project, set-design preferences,
 and safety. For current numbers (benchmarks, bounds) read current_state.md, not this file.
 
@@ -34,7 +34,7 @@ active skill project. Note any skill already mastered and therefore retired from
 2. <…>
 
 ## <Active skill> — the active project
-- Status (YYYY-MM-DD): <what is confirmed vs still open, with how much evidence backs it>.
+- Status (DD/MM/YYYY): <what is confirmed vs still open, with how much evidence backs it>.
 - Current limiter: <the one element being coached now>.
 - Method / cue: <the swimmer's own working method, if any>.
 - Next: <the next drill or progression>.

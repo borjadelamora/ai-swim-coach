@@ -20,8 +20,9 @@ When asked a question, return:
   beats "recently." Quantify everything.
 - recent_load_summary: per last ~5 sessions — date, total distance, duration, rpe, the
   per-block effort tags, LOAD (rpe x duration_min), and GAP (days since the prior session).
-  Lead with DAYS SINCE THE LAST SESSION to today (use the date you were given) — the recovery
-  read is anchored to now, so "last swim was yesterday" vs "4 days ago" must be explicit. Note
+  Lead with DAYS SINCE THE LAST SESSION to today (use the date you were given; dates are in the
+  configured format, CLAUDE.md) — the recovery read is anchored to now, so "last swim was
+  yesterday" vs "4 days ago" must be explicit. Note
   fatigue evidence FROM the log: within-session split slowing, actual rpe above the planned,
   notes of unusual tiredness, a self-shortened/aborted set (`skipped`). Across the window report:
   load trajectory (recent total vs the trailing ~4-week weekly average — ramping/steady/easing),

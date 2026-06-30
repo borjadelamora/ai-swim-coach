@@ -1,6 +1,6 @@
 {
   "_comment": "TEMPLATE — copy to phase.json and fill in. Periodisation state. Rewritten by the logger only on a phase transition, new microcycle, or changed constraint (a /review trigger). Mesocycle ~3-6 weeks; recovery microcycle every ~3-4 weeks of loading.",
-  "last_updated": "YYYY-MM-DD",
+  "last_updated": "DD/MM/YYYY",
   "macrocycle": "<the season-level context, e.g. off-season, no fixed target meet yet>",
   "current_phase": "<base | build | peak | recover, with an optional descriptor>",
   "phase_week": 1,

@@ -4,7 +4,7 @@
 > benchmarks. This is the PRIMARY source for current capacity. The logger rewrites it after
 > each session; the coach reads it before prescribing. Keep it lean — one line per fact.
 
-last_updated: YYYY-MM-DD
+last_updated: DD/MM/YYYY
 source: LIVE. The source of truth for current capacity. The logger rewrites it after each
 session; the coach reads it before prescribing.
 course: <your course, set at setup — SCM (25 m) / SCY (25 yd) / LCM (50 m)>. Every benchmark

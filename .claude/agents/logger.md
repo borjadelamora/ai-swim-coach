@@ -31,7 +31,8 @@ enemy.
 
 ## (1) Live log line — append one JSON object on a single line; never edit past lines
 Schema (distances are in the swimmer's configured course; see current_state.md):
-{ "id": n (increment), "date": "YYYY-MM-DD" (REQUIRED, real date, never null),
+{ "id": n (increment), "date": in the configured date format (CLAUDE.md; e.g. DD/MM/YYYY)
+    (REQUIRED, real date, never null),
   "pool": the course code (e.g. "SCM"|"SCY"|"LCM"), "duration_min": n,
   "total": n (sum of measured blocks only), "rpe": 1-10|null, "rating": 1-5|null,
   "turns_in_sets": "wall"|"flip"|"mixed", "pain": null | "short factual string",

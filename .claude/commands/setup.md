@@ -41,7 +41,9 @@ understanding before writing files, and let them correct it.
 2. POOL & COURSE (important) — the pool length (25 or 50) and the unit (metres or yards).
    Record the COURSE: SCM (25 m), SCY (25 yd), or LCM (50 m). Everything downstream prints
    and tags this. Ask if they ALSO have older logs from a different pool/unit — if so,
-   capture that second course for the calibration archive.
+   capture that second course for the calibration archive. Also ask their REGION for the
+   DATE FORMAT — US = MM/DD/YYYY, else DD/MM/YYYY (default) — and record it as date_format
+   in CLAUDE.md's "## Date format".
 3. STROKES — which strokes they actually swim (freestyle, backstroke, breaststroke,
    butterfly, individual medley). This frames what the coach can program.
 4. Schedule — sessions per week and a typical time budget per session.
@@ -101,8 +103,9 @@ memory rules: facts in the log, interpretation in the profile, one fact in one p
   it absent.
 - CLAUDE.md "## The swimmer"  — replace the generic pointer with a short personalised
   snapshot: level, course, strokes, the active skill, and the limiter. Keep DETAILED facts
-  in memory/, not here. Touch the "## Health note" only if they reported a real, current
-  constraint; otherwise leave the low-key default.
+  in memory/, not here. Set "## Date format" date_format from their region. Touch the
+  "## Health note" only if they reported a real, current constraint; otherwise leave the
+  low-key default.
 
 ## Finish
 Confirm, one line per file, what you created, populated, or changed — and what you left as

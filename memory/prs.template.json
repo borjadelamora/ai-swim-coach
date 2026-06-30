@@ -1,7 +1,7 @@
 {
   "_comment": "TEMPLATE — copy to prs.json and fill in. Personal records, each tagged by course (e.g. 'SCM' = 25 m, 'SCY' = 25 yd, 'LCM' = 50 m). Never compare across courses without converting. Updated by the logger only when a record falls.",
   "units": "All PRs are tagged by course. Do not compare across courses without the conversion.",
-  "last_updated": "YYYY-MM-DD",
+  "last_updated": "DD/MM/YYYY",
   "note": "Times are best observed in training, not necessarily official. '<' means 'came in under'. Dive/board times noted separately from push times.",
   "timed_prs": {
     "25_free_sprint_push": { "time": ":XX", "pool": "<course>", "from": "<date and context>" },

@@ -27,6 +27,13 @@ print the unit explicitly on every session and tag it on every benchmark.
   25 m, so yard times run ~10-11% faster than the equivalent metres; long-course (50 m) times
   run slower than short-course. Tag every figure with its course and keep the two separate.
 
+## Date format (set at setup)
+The swimmer's DATE FORMAT is chosen during `/setup` from their region: `MM/DD/YYYY` (United
+States) or `DD/MM/YYYY` (most of the rest of the world). Default `DD/MM/YYYY`. Setup records
+the choice on the next line, and it is used EVERYWHERE — stored in the log and shown in every
+output. Whichever is set, parse it accordingly when computing date gaps (days since last session).
+- date_format: DD/MM/YYYY
+
 ## Set notation (the swimmer's exact format)
 Within a block:  `n x distance Stroke <goal @ send-off`
   e.g. `4x25 Kick <:40 @ :45` = 4 reps of 25 kick, aim under :40, leave every :45.
