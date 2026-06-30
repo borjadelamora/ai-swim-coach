@@ -58,7 +58,7 @@ Five agents, each defined in [`.claude/agents/`](.claude/agents). They are inten
 | Agent | Role | Tools | Model tier | Authority |
 | --- | --- | --- | --- | --- |
 | **Historian** | Reports facts from the log — recent load, set shapes due for variation, skill recency, patterns, and genuine data gaps. Never prescribes. | Read-only | Fast | None — facts only |
-| **Physiologist** | Translates recent load and current state into today's target: energy system, training zone, and work-to-rest structure. Sets constraints; does not write the set. | Read-only | Mid | Constrains the coach |
+| **Physiologist** | Translates recent load, current state, and the periodisation phase into today's target: energy system, training zone, and work-to-rest structure. Sets constraints; does not write the set. | Read-only | Mid | Constrains the coach |
 | **Coach** | Writes the actual session within the physiologist's constraints, in the athlete's exact notation. Authoritative — overrides athlete requests when warranted, and explains why. | Read-only | Top | Writes the prescription |
 | **Critic** | Reviews the coach's set against the brief and the log, hunting specific failure modes. Returns *approve* or *revise* with blockers. | Read-only | Mid | Veto before the athlete sees the set |
 | **Logger** | After a session, writes the raw record first, then refreshes every derived view (records, current state, profile, glance log). | Read / Write | Mid | Owns all writes to memory |
@@ -117,7 +117,7 @@ The output is two things: a **readable set** in plain language with effort cues 
 
 ### `/log`
 
-Records the session just completed. The logger appends one structured object to the raw log (facts only — what was done, times, efforts, turns, anything skipped), verifies it landed, and only then refreshes the derived views. Interpretation is kept strictly out of the raw record and confined to the profile.
+Records the session just completed. The logger appends one structured object to the raw log (facts only — what was done, times, efforts, turns, anything skipped, and the athlete's own words on how it felt), verifies it landed, and only then refreshes the derived views. Those notes make the raw log the permanent home for the detail that matters; interpretation is kept strictly out of the raw record and confined to the profile.
 
 ### `/review`
 
@@ -208,7 +208,9 @@ A few ideas run through the whole system and are worth calling out, because they
 
 **Separate what is proven from what is suspected.** The analysis agents are disciplined about epistemic honesty: they distinguish what the clock *proved* (measured times and distances), from what the data *suggests* (a trend the evidence supports but has not confirmed), from what genuinely *cannot be pinned down yet*. A thing seen once is an observation; a thing seen every session is a pattern — and the system refuses to harden the former into the latter prematurely. This discipline governs analysis only; the prescription the athlete reads is delivered with full conviction and no hedging.
 
-**One fact, one place.** Every file is kept lean. A fact lives in exactly one file; nothing is restated across files; stale information is overwritten rather than accumulated. "Lean" means tight, not lossy — hard-won facts such as benchmarks and calibration corrections are preserved on every rewrite.
+**One fact, one place.** Every file is kept lean. A fact lives in exactly one file; nothing is restated across files; stale information is overwritten rather than accumulated. The raw log holds the history; the derived views hold only the *current* read and never replay it session by session, so they stay bounded as the log grows. "Lean" means tight, not lossy — hard-won facts such as benchmarks and calibration corrections are preserved on every rewrite.
+
+**Measure what you are building.** A subtle failure mode is training a limiter in an untimed format — breath-controlled sets, drills — and so never measuring whether it is improving. The system guards against it: the historian tracks how long the focus quality has gone unmeasured, and the physiologist periodically calls for a measurable benchmark, keeping a phase's progress and its transition trigger testable rather than a matter of feel.
 
 **Self-contained commands.** Each command reads its state from `memory/`, never from the chat history. Agents are spawned fresh and read the files, so the system is reproducible and stateless from the user's point of view.
 

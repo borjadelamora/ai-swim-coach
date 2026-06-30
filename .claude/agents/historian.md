@@ -22,7 +22,9 @@ When asked a question, return:
   rpe/rating, and the per-block effort tags. The live schema has no single "zone" field;
   summarize intensity from total distance, rpe, and block efforts. Flag back-to-back hard
   or back-to-back easy days, and note prescribed work the swimmer skipped (the `skipped`
-  field).
+  field). Also report sessions since the last MEASURED data point for the quality being
+  built (a block with logged times) — that work is often untimed (nB/drills), so the
+  Physiologist needs to know when a measurable benchmark is due.
 - recent_set_shapes: the block STRUCTURE of the last 2-3 sessions (e.g. "kick 4x25 @:45 in
   3/3 sessions; pull 75+2x50 in 2/2; broken-50s aerobic spine in 2/2; order
   warmup→drill→kick→pull→swim in 2/2"), so the Coach can deliberately avoid repeating

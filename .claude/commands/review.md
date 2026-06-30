@@ -5,10 +5,14 @@ description: Weekly / phase review.
 Produce a training review for the period the swimmer names (default: last 7
 sessions). Delegate to the historian for the data (from sessions.jsonl;
 archive.jsonl is calibration-only) and the physiologist for the load read.
-Cover: total volume and the easy:hard balance across the week (~80/20, or drifting
-into the middle?), active-skill progression, any record movement, whether a recovery
-microcycle or phase change is due, and the focus for the next block. Have the logger
-update phase.json if a transition is warranted.
+Output these sections, in this fixed order (drop none):
+  Period: what's covered.
+  Volume & easy:hard: total volume + the ~80/20 balance (or drifting into the middle?).
+  Active skill: progression this period.
+  Records: any movement.
+  Phase: hold, or transition/microcycle change — with why; have the logger update
+    phase.json ONLY if a transition is warranted.
+  Next block: the focus going forward.
 
 /review is READ-ONLY over the per-session files — it does NOT rewrite current_state.md,
 swimmer_profile.md, prs.json, or the log (those are the logger's job under /log). The only

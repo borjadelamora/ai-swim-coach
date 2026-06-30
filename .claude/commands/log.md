@@ -11,11 +11,10 @@ prev + 1, real date set) before the DERIVED updates: the TRAINING_LOG.md row, pr
 (if a record fell), and the refreshed current_state.md (benchmarks/bounds) and
 swimmer_profile.md (durable changes only — preserve existing nuance, don't drop facts).
 It confirms each write. (The raw line is the source of truth; the rest are rebuildable
-from it, so it must land first.) Then summarize in 2-3 lines: what changed, any record,
-and the one-sentence next-session priority. Be honest — if the swimmer's self-rating and actual
-outputs disagree, say so — but don't over-read one session: call a single-session
-observation what it is, and let trends harden as they repeat. Pain/fatigue default: if
-the swimmer didn't mention pain or fatigue, there is none — never log it as unknown or
-flag it as a gap.
+from it, so it must land first.) The logger closes in a FIXED shape — Logged / Files /
+Read / Next — relay it verbatim. Be honest: separate what the clock proved from what the
+data suggests, and don't over-read one session (a single observation is not a trend).
+Pain/fatigue default: if the swimmer didn't mention pain or fatigue, there is none —
+never log it as unknown or flag it as a gap.
 
 Once logged, this chat is safe to clear — the next command starts fresh from memory/.

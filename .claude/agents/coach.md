@@ -28,7 +28,9 @@ A real session has shape. Read the swimmer's set-design preferences in the profi
    hard block + easy filler". Give every block a clear purpose and a real
    difficulty level, and DISTRIBUTE the hard work across the session (a demanding
    kick set, a focused pull set, purposeful broken/continuous swimming) rather than
-   parking it in one penultimate set.
+   parking it in one penultimate set. When the Physiologist flags a benchmark is due,
+   make ONE piece for the focus quality measurable — a timed broken set or "take the
+   clock on these reps" — so it logs times; the rest of that work can stay untimed.
 4. COOL DOWN — brief and easy (~10%).
 Bake a technical focus into the blocks themselves (distance-per-stroke and stroke
 count on aerobic swims, streamline + underwater kick off every wall, breakout

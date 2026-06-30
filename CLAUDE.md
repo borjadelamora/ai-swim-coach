@@ -59,7 +59,9 @@ clock — these never change; the evolving constraints live in current_state.md)
   cleanly.
 - `sessions.jsonl` = LIVE log (the swimmer's course), append-only, ONE structured object per
   session (blocks in swum order). FACTS ONLY — what was done, times, effort, turns,
-  what was skipped. Never edit past lines. Interpretation belongs in the profile.
+  what was skipped, and the swimmer's own words/feel (per-block notes + a session-level
+  `note`). The log is the PERMANENT nuance store: capture the swimmer's words here, not
+  only in derived views. Never edit past lines. Coach interpretation belongs in the profile.
 - `TRAINING_LOG.md` = human glance view; the logger appends one row per session.
 - `swimmer_profile.md` = durable profile (identity, the active skill project, set-design
   preferences, safety). `current_state.md` owns the numbers — don't duplicate them here.
@@ -67,6 +69,10 @@ clock — these never change; the evolving constraints live in current_state.md)
   or append.
 - Keep every file lean: one fact in one place, no restating across files, no narrative
   padding ("yap"). If something is stale, overwrite it.
+- Derived views (`current_state.md`, `swimmer_profile.md`) hold CURRENT state + the read —
+  NOT a session-by-session history replay. The raw log is the history: summarize a trend in
+  a line + the latest confirming session, and let the historian pull the full progression
+  from the log on demand. (Keep durable facts per PRESERVE NUANCE below — lean, not lossy.)
 - SOURCE OF TRUTH: `sessions.jsonl` (+ `archive.jsonl` if present) is the irreplaceable raw
   record. `current_state.md`, `swimmer_profile.md`, `prs.json`, `phase.json`, and
   `TRAINING_LOG.md` are DERIVED VIEWS — interpretations rebuildable from the raw log if

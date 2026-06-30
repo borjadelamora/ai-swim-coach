@@ -21,9 +21,11 @@ to preserve existing nuance).
 
 ## The hard rule: facts vs interpretation
 The LOG is facts only — what was done, in the order swum, with times, effort, turns,
-and what was skipped. NO interpretation, inference, coaching meta, or narrative in the
-log. All assessment ("limiter shifted", "rating vs output", "do X next") goes in the
-PROFILE. One fact lives in exactly one place — never restate the same thing across
+what was skipped, and the swimmer's OWN words/feel (block notes + the session `note`:
+mood, attributions, self-mods, context). Those words ARE facts and the log is their
+permanent home — capture them faithfully here, not only in the profile. NO coach
+interpretation, inference, or narrative in the log. All assessment ("limiter shifted",
+"rating vs output", "do X next") goes in the PROFILE. One fact lives in exactly one place — never restate the same thing across
 files. Cut anything that doesn't earn its place; vague, padded files ("yap") are the
 enemy.
 
@@ -33,6 +35,9 @@ Schema (distances are in the swimmer's configured course; see current_state.md):
   "pool": the course code (e.g. "SCM"|"SCY"|"LCM"), "duration_min": n,
   "total": n (sum of measured blocks only), "rpe": 1-10|null, "rating": 1-5|null,
   "turns_in_sets": "wall"|"flip"|"mixed", "pain": null | "short factual string",
+  "note": null | "session-level feel/context in the swimmer's WORDS (e.g. 'felt strong',
+    '4th straight day', 'first session back') — the permanent home for session sentiment;
+    capture it here, not only in the profile",
   "blocks": [ { "i": order, "kind": "warmup|drill|kick|pull|swim|aerobic|sprint|main|cooldown",
                 "set": "the set in the swimmer's notation, e.g. 6x25 Kick <:35 @:45",
                 "dist": n  (measured distance) | omit and use "min": n for unmetered drill,
@@ -58,6 +63,8 @@ an imported archive's records; add live-course records alongside them.
 
 ## (4) current_state.md — refresh the numbers
 Keep it lean: per benchmark, Standard / Volume / Trend / Next bound, one line each.
+Trend = a one-line read (direction + the single most recent confirming session), NOT a
+session-by-session replay — the full progression lives in the log for the historian to pull.
 Advance a NEXT BOUND by ONE variable only (volume OR goal OR send-off), and only when
 the standard was met cleanly; otherwise hold or ease. The PERMANENT format rules
 (send-offs :15, finish-on-the-start-wall = block totals are multiples of two pool lengths)
@@ -73,16 +80,21 @@ for this narrative); set-design preferences; response_to_intensity; safety (low-
 next_session_priority. Distinguish what the swimmer SAYS from what the data SHOWS; when
 they conflict, trust the data and say so. Do NOT track a skill the profile marks as
 mastered. Do NOT over-weight a settled, pain-free niggle — keep the one low-key safety line.
-Keep it lean: no repetition. But PRESERVE durable nuance — never drop a benchmark, a
-calibration correction, an evidence-tagged strength/weakness, or a stated preference
-unless a new session genuinely supersedes it. Lean means tight, not lossy.
+Hold the current READ, not a history log — don't replay per-session splits/clean-rates
+(those live in the log); summarize a trend in a line + the latest evidence. But PRESERVE
+durable nuance — never drop a benchmark, a calibration correction, an evidence-tagged
+strength/weakness, or a stated preference unless a new session genuinely supersedes it.
+Lean means tight, not lossy.
 
 ## phase.json — only on a periodization change (a /review trigger)
 Rewrite when a phase transition, new microcycle, or changed constraint is warranted:
 { "last_updated", "macrocycle", "current_phase" (base|build|peak|recover, descriptor ok),
   "phase_week", "microcycle_note", "active_constraints":[..], "primary_focus",
   "secondary_focus", "transition_trigger" }. Mesocycle ~3-6 wks; recovery microcycle
-every ~3-4 wks of loading. Only transition when the trigger is actually met.
+every ~3-4 wks of loading. Only transition when the trigger is actually met. Keep
+active_constraints to PERIODIZATION-specific items only — do NOT restate current_state's
+standing rules here (current_state owns constraints; restating them drifts). Make any
+transition_trigger that cites a pace or measurable quality TESTABLE — tie it to measured data.
 
 Calibrate the profile's assessments: separate what's MEASURED (times, PRs) from a
 supported READ from what's not yet knowable. Do NOT write a one-session observation as
@@ -90,4 +102,9 @@ an established trend — mark it as early and let it harden as it repeats across
 Pain/fatigue default: a session with no reported pain/fatigue means none — record
 "pain": null and never frame it as unknown or a data gap.
 
-Finish by confirming what changed, one line per file.
+Finish with the swimmer-facing close in this FIXED shape, nothing more:
+  Logged <id> (<date>).
+  Files: one line — what was written/updated.
+  Read: 2-3 lines — separate what the clock PROVED (times, PRs) from what the data
+    SUGGESTS; flag any self-rating vs output mismatch, but don't over-read one session.
+  Next: one-line next-session priority.
