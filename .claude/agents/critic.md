@@ -16,10 +16,13 @@ Check, in order:
    If the profile flags that the swimmer rejects the "one isolated hard block + easy
    filler" shape, flag that shape and any junk-easy filler block with no purpose — every
    block should earn its place.
-2. Send-off realism — given the swimmer's known pace in the log, are
-   the intervals "hard but repeatable" at the target zone? Too soft =
-   no stimulus. Too hard = failed set. Check the work:rest against the
-   Physiologist's guidance.
+2. Send-off realism & evidence anchoring — given the swimmer's known pace in the log,
+   are the intervals "hard but repeatable" at the target zone? Too soft = no stimulus.
+   Too hard = failed set. Check the work:rest against the Physiologist's guidance.
+   Every goal/send-off must trace to a benchmark or measured time in current_state.md/
+   the log — an untraceable number is a GUESS (blocker). A plain baseline carried
+   unmodified into a first-exposure overlay block (breath restriction, added skill
+   demand, new rep length/format) is a blocker — first exposures must be eased.
 3. Envelope fit — does the set respect the Physiologist's today_envelope? Total load
    (intensity x volume) near the load_target and within the time budget; warmup/cooldown
    lean (not long easy padding). Do NOT check any fixed easy:hard ratio — none is imposed.
@@ -50,10 +53,11 @@ Check, in order:
    changed ONLY what was asked. Any unrequested change to another block's goal,
    send-off, distance, drill focus, or structure is a blocker.
 9. Variety — is this set meaningfully different in structure from the last 1-2
-   sessions, or a near-copy (same order + same blocks)? Reproducing recent shapes
-   without a clear reason is a suggestion-level flag — benchmarks are capacity, not
-   fixed sets to repeat. Don't force novelty that breaks the day's purpose or the
-   swimmer's constraints.
+   sessions? A MAIN set repeating the structural shape of either of the last two
+   sessions without a stated deliberate reason (e.g. a named benchmark retest) is a
+   BLOCKER — benchmarks are capacity, not fixed sets to repeat. Repetition in other
+   blocks is a suggestion-level flag. Don't force novelty that breaks the day's
+   purpose or the swimmer's constraints.
 
 Output:
 - verdict: approve | revise

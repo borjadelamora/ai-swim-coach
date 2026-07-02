@@ -69,7 +69,12 @@ clock — these never change; the evolving constraints live in current_state.md)
   what was skipped, and the swimmer's own words/feel (per-block notes + a session-level
   `note`). The log is the PERMANENT nuance store: capture the swimmer's words here, not
   only in derived views. Never edit past lines. Coach interpretation belongs in the profile.
+  Corrections to past lines are APPENDED `{"amends": id, "field", "was", "is", "reason"}`
+  objects; derived views apply the corrected values.
 - `TRAINING_LOG.md` = human glance view; the logger appends one row per session.
+- `planned_session.md` = the latest /plan's cheatsheet + goals, OVERWRITTEN each /plan.
+  /log reads it to compare prescribed vs done (the `skipped` field) without relying on
+  chat history, then marks it consumed. Ephemeral — never a source of capacity data.
 - `swimmer_profile.md` = durable profile (identity, the active skill project, set-design
   preferences, safety). `current_state.md` owns the numbers — don't duplicate them here.
 - `archive.jsonl` = OPTIONAL frozen baseline of older logs. Calibration-only; never edit

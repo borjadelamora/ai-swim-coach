@@ -37,6 +37,9 @@ Run the pre-swim pipeline:
    coach→swimmer — never paraphrased). Quick check before sending: cheatsheet present? all
    sections present? per-block + session totals add up? Recover a missing section from the
    coach's output rather than presenting partial.
+   Then WRITE the approved prescription to memory/planned_session.md (overwrite): session
+   date + the cheatsheet + each block's goal/send-off — so /log can compare prescribed vs
+   done in a fresh chat. This is the only file /plan writes.
    Then one line: what to log after (rating + any splits + notes).
 
 Do not water down overrides. If the physiologist and coach decided today

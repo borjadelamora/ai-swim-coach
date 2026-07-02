@@ -179,8 +179,9 @@ There is a strict distinction between the **source of truth** and **derived view
 | `prs.json` | Personal records. | Derived |
 | `phase.json` | Periodisation state — the current training phase and its transition trigger. | Derived |
 | `TRAINING_LOG.md` | A human-readable, one-row-per-session glance view. | Derived |
+| `planned_session.md` | The latest `/plan` prescription, overwritten each run; `/log` reads it to compare prescribed vs done, then marks it consumed. | Ephemeral |
 
-The raw logs are the irreplaceable record; every derived view can be rebuilt from them if it drifts or is lost. This is why the logger always writes the raw line first and never edits a past line.
+The raw logs are the irreplaceable record; every derived view can be rebuilt from them if it drifts or is lost. This is why the logger always writes the raw line first, arithmetic-checks it (block maths must equal the recorded distances), and never edits a past line — corrections are appended `amends` objects.
 
 Your **course** (pool length and unit) is chosen at setup: short-course metres (25 m), short-course yards (25 yd), or long-course metres (50 m). Every figure is tagged with it. If you import older logs from a different course, they are kept as a separate, frozen archive and never compared with live data without applying the conversion — a small but realistic detail that prevents a whole class of silent errors.
 
@@ -266,6 +267,7 @@ cp memory/phase.template.json          memory/phase.json
 cp memory/prs.template.json            memory/prs.json
 cp memory/TRAINING_LOG.template.md     memory/TRAINING_LOG.md
 touch memory/sessions.jsonl
+touch memory/planned_session.md
 ```
 
 The templates are documented inline and show the exact schema each file expects.

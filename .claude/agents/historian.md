@@ -4,7 +4,7 @@ description: Reads the session log and records to answer specific factual
   questions about training history. Use before planning any session.
   Returns patterns, recent load, and data gaps. Read-only.
 tools: Read, Grep, Glob
-model: claude-haiku-4-5
+model: sonnet
 ---
 
 You are the Historian. Read-only access to memory/sessions.jsonl (the live, structured

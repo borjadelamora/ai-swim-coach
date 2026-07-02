@@ -4,8 +4,10 @@ description: Log the session just completed.
 
 The swimmer is reporting how the session went: $ARGUMENTS
 
-Delegate to the logger. It writes the irreplaceable raw session object to
-sessions.jsonl FIRST — one structured line, blocks in swum order, facts only (times,
+Delegate to the logger. It reads memory/planned_session.md (the saved prescription) to
+compare prescribed vs done, arithmetic-checks the line (block math = dist, blocks sum to
+total) — asking the swimmer to resolve any mismatch BEFORE writing — then writes the
+irreplaceable raw session object to sessions.jsonl FIRST — one structured line, blocks in swum order, facts only (times,
 effort, turns, skipped; no interpretation) — and verifies it landed (valid JSON, id =
 prev + 1, real date set) before the DERIVED updates: the TRAINING_LOG.md row, prs.json
 (if a record fell), and the refreshed current_state.md (benchmarks/bounds) and

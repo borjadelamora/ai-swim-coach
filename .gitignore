@@ -10,6 +10,7 @@ memory/swimmer_profile.md
 memory/prs.json
 memory/phase.json
 memory/TRAINING_LOG.md
+memory/planned_session.md
 
 # Explicitly keep the templates and the synthetic examples tracked.
 !memory/*.template.md
