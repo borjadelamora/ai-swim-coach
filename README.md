@@ -113,15 +113,15 @@ Run on first use to build your system, and again later only when you want to rec
 
 Plans today's session. Input is free-form — typically a time budget, optionally with how you feel ("45 minutes, legs feel heavy"). The pipeline reads the recent log, sets a physiological target, writes a set that is meaningfully different in structure from recent sessions, and runs it past the critic before presenting it. Stated feelings are weighed against the data; if you ask for an easy day after three easy days, you will be told why today is not easy.
 
-The output is two things: a **readable set** in plain language with effort cues and a short rationale, and a terse **cheatsheet** in the athlete's shorthand to copy onto a waterproof deck card.
+The output is two things: a **readable set** in plain language with effort cues and a short rationale, and a terse **cheatsheet** in the athlete's shorthand to copy onto a waterproof deck card. The approved prescription is also saved to `memory/planned_session.md`, so `/log` can later compare prescribed against done without needing the chat history.
 
 ### `/log`
 
-Records the session just completed. The logger appends one structured object to the raw log (facts only — what was done, times, efforts, turns, anything skipped, and the athlete's own words on how it felt), verifies it landed, and only then refreshes the derived views. Those notes make the raw log the permanent home for the detail that matters; interpretation is kept strictly out of the raw record and confined to the profile.
+Records the session just completed. The logger reads the saved prescription to work out what was skipped, arithmetic-checks the session line (each block's rep maths must equal its recorded distance, and the blocks must sum to the session total — any mismatch is resolved with the athlete before writing), appends one structured object to the raw log (facts only — what was done, times, efforts, turns, anything skipped, and the athlete's own words on how it felt), verifies it landed, and only then refreshes the derived views. Those notes make the raw log the permanent home for the detail that matters; interpretation is kept strictly out of the raw record and confined to the profile.
 
 ### `/review`
 
-Produces a training review over a named period (default: the last seven sessions): total volume, the easy-to-hard balance across the week, skill progression, any record movement, and whether a recovery microcycle or a phase change is due. It is read-only over the per-session record; the one file it may change is the periodisation state, and only when a transition is actually warranted.
+Produces a training review over a named period (default: the last seven sessions): total volume, the load trajectory and recovery pattern (judged by load and recovery evidence, not a fixed easy:hard ratio), skill progression, any record movement, and whether a recovery microcycle or a phase change is due. It is read-only over the per-session record; the one file it may change is the periodisation state, and only when a transition is actually warranted.
 
 ---
 
@@ -197,7 +197,7 @@ So after any command that writes to `memory/`, clear the conversation before run
 2. Run `/clear`. This command is built into Claude Code: it empties the conversation but leaves your files untouched.
 3. Run the next command. It reads the current state from `memory/` and begins clean.
 
-`/plan` only reads the files and changes nothing, so there is nothing to lose by clearing after it as well. The natural moment to clear is at the end of a session's cycle, once `/log` has saved the work. The commands themselves remind you of this on completion.
+`/plan` saves its prescription to `memory/planned_session.md` and touches nothing else, so there is nothing to lose by clearing after it as well. The natural moment to clear is at the end of a session's cycle, once `/log` has saved the work. The commands themselves remind you of this on completion.
 
 ---
 

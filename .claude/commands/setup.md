@@ -99,6 +99,7 @@ memory rules: facts in the log, interpretation in the profile, one fact in one p
 - memory/TRAINING_LOG.md     — the header plus one row per ingested session (none if they
   had no logs).
 - memory/sessions.jsonl      — the ingested current-course sessions, or an empty file.
+- memory/planned_session.md  — an empty placeholder ("No active prescription."); /plan overwrites it.
 - memory/archive.jsonl       — an older-course archive if they provided one; otherwise leave
   it absent.
 - CLAUDE.md "## The swimmer"  — replace the generic pointer with a short personalised
