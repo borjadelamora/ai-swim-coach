@@ -58,6 +58,20 @@ adaptation. Reason in work:rest terms:
   with brief rest) trains race pace while keeping fatigue tolerable —
   good for skill-preserving speed.
 
+## Breath-restriction / CO2-tolerance work (br-N sets and holds)
+Breath restriction is an OVERLAY on top of the zone work, and it changes the dosing math:
+- It adds a hidden cost the pace clock doesn't show. A breath-restricted rep needs MORE
+  rest than its plain equivalent — never carry a plain send-off across unchanged.
+- Progress ONE dial at a time: breath pattern (br3→br5→br7) OR pace OR rep length OR rest
+  density — never several at once. Stacking max restriction + tight rest + fatigue on a
+  first exposure produces failed holds, not adaptation.
+- Distinguish the two trainable states: holding a pattern CALM/FRESH (skill + comfort,
+  cheap) vs holding it UNDER ACCUMULATED FATIGUE (the expensive quality; dose it like
+  hard work and place it deliberately). Read which one today targets from the profile.
+- CO2 tolerance responds to frequency over heroics: repeated controlled exposure beats
+  occasional maximal holds. Never prescribe unbroken maximal breath-holds on top of
+  already-hard work.
+
 ## Intensity: manage load + recovery (distribution scales with VOLUME)
 Do NOT enforce a fixed easy:hard ratio regardless of context — the right intensity distribution
 depends on the athlete's VOLUME and goals. At HIGH weekly volume an ~80/20 polarized bias (most

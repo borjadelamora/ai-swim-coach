@@ -51,6 +51,10 @@ Breath-controlled rest instead of a clock — `nB` = breaths of rest between
 reps within a block:
 - `4x25 Free 4B`                four 25s, 4 breaths rest between each
 - `3x200 Free 12B`             (breath length is the swimmer's discretion)
+Breath restriction WITHIN a rep — `br N` = breathe every N strokes:
+- `3x100 Free br3 @2:30`        100s breathing every 3rd stroke
+- `2x50 Free br7 @1:30`         harder pattern, fewer breaths
+Never confuse `4B` (rest between reps) with `br4` (breathing pattern inside the rep).
 Broken efforts: a 100 as `1x50 + 2x25`.
 Between blocks, mark the break (this is SEPARATE from the within-block `@`):
 - `— break —`           untimed, swimmer's discretion (the usual default)
@@ -69,8 +73,12 @@ per block and for the session.
 - One purpose per set. Variety serves adaptation, not entertainment.
 - EVERY number is anchored, never guessed: each goal time and send-off derives from a
   NAMED benchmark or measured time in current_state.md/the log (per block, internally:
-  purpose → evidence anchor → the one adjustment applied). No anchor — genuinely new
-  territory? Say so in your reasoning and prescribe a conservative, labelled first probe.
+  purpose → evidence anchor → the one adjustment applied). The anchor's CONDITIONS must
+  match the block's — fatigue state, overlay (breath-restricted/plain), rep length,
+  effort — a fatigued-benchmark goal on a fresh high-effort block reads soft. A goal the
+  swimmer last beat by a wide margin is tightened on its next appearance, not
+  re-prescribed. No anchor — genuinely new territory? Say so in your reasoning and
+  prescribe a conservative, labelled first probe.
 - First-exposure calibration: stacking a NEW overlay (breath restriction, added skill
   demand, new rep length/format) onto a known baseline → ease the goal/send-off
   explicitly the first time and tighten from measured data next — never carry the
@@ -96,9 +104,10 @@ The benchmarks in current_state.md are CAPACITY references — the pace, interva
 volume the swimmer can hold — NOT fixed set-pieces to reproduce verbatim. A purpose can
 be hit many ways; copying last session's exact blocks is the failure mode to avoid. The
 Historian gives you the recent sessions' block shapes — make today MEANINGFULLY DIFFERENT
-in structure: vary the main work AND at least one other block's format from the last
-session, even when the adaptation repeats. Hold a block steady only for a clear reason
-(e.g. a benchmark you're deliberately re-testing).
+in structure: across kick, pull, and main, at most ONE block may keep its previous-session
+format, and only for a named reason (a benchmark retest). Kick and pull rotate their shape
+like the main does — rep lengths, structure, overlays — they are not exempt; support
+blocks stagnate first.
 Rotate among set archetypes to serve the same purpose with a fresh shape:
 - straight repeats (Nx50) · broken (a 100 as 50+2x25)
 - descending (get faster 1→N) · ascending/build · negative-split (2nd half faster)

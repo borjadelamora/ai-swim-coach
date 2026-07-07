@@ -41,6 +41,9 @@ Within a block:  `n x distance Stroke <goal @ send-off`
   Breath-controlled rest instead of a clock: `nB` = breaths of rest between reps within a
   block. e.g. `4x25 Free 4B` = four 25s of free, 4 breaths rest between each (breath length
   is the swimmer's discretion). e.g. `2x100 Free 12B`.
+  Breath restriction WITHIN a rep: `br N` = breathe every N strokes for the whole rep.
+  e.g. `3x100 Free br3 @2:30` = 100s breathing every 3rd stroke. Do not confuse the two:
+  `4B` = rest BETWEEN reps; `br4` = breathing pattern INSIDE the rep.
   Broken efforts allowed: a 100 written as `1x50 + 2x25`.
 
 Break between blocks (a set is a sequence of blocks):

@@ -20,9 +20,12 @@ Check, in order:
    are the intervals "hard but repeatable" at the target zone? Too soft = no stimulus.
    Too hard = failed set. Check the work:rest against the Physiologist's guidance.
    Every goal/send-off must trace to a benchmark or measured time in current_state.md/
-   the log — an untraceable number is a GUESS (blocker). A plain baseline carried
-   unmodified into a first-exposure overlay block (breath restriction, added skill
-   demand, new rep length/format) is a blocker — first exposures must be eased.
+   the log — an untraceable number is a GUESS (blocker). The anchor's conditions must
+   match the block's (fatigue state, breath-restricted/plain overlay, rep length): a goal
+   the swimmer last beat by a wide margin, re-prescribed unchanged, is a blocker. A plain
+   baseline carried unmodified into a first-exposure overlay block (breath restriction,
+   added skill demand, new rep length/format) is a blocker — first exposures must be
+   eased. Breath-restricted blocks need more rest than plain equivalents.
 3. Envelope fit — does the set respect the Physiologist's today_envelope? Total load
    (intensity x volume) near the load_target and within the time budget; warmup/cooldown
    lean (not long easy padding). Do NOT check any fixed easy:hard ratio — none is imposed.
@@ -43,7 +46,9 @@ Check, in order:
       here; the readable set is intentionally plain.
    b. CHEATSHEET block — this is where canonical syntax is validated: `<:goal
       @ send-off` (e.g. `4x25 Kick <:40 @ :45`), `nB` breath rest (e.g.
-      `4x25 Free 4B`), break lines as `---` / `--- 2:00 ---` / `--- 2-3min ---`,
+      `4x25 Free 4B`), `br N` in-rep breathing pattern (e.g. `3x100 br3` — flag any
+      ambiguous mixing of `nB` and `br N` tokens), break lines as `---` / `--- 2:00 ---`
+      / `--- 2-3min ---`,
       Kick/Pull labeled (plain free unlabeled), send-offs are multiples of :15
       (:15/:30/:45/1:00/1:15/1:30…) — flag any odd interval like @:42 as a blocker. The
       cheatsheet must be present and must match the readable set's actual work.
@@ -55,9 +60,10 @@ Check, in order:
 9. Variety — is this set meaningfully different in structure from the last 1-2
    sessions? A MAIN set repeating the structural shape of either of the last two
    sessions without a stated deliberate reason (e.g. a named benchmark retest) is a
-   BLOCKER — benchmarks are capacity, not fixed sets to repeat. Repetition in other
-   blocks is a suggestion-level flag. Don't force novelty that breaks the day's
-   purpose or the swimmer's constraints.
+   BLOCKER — benchmarks are capacity, not fixed sets to repeat. A kick or pull block
+   carrying the same format a THIRD straight session without a named retest reason is
+   also a blocker (support blocks stagnate first); other repetition is a suggestion-level
+   flag. Don't force novelty that breaks the day's purpose or the swimmer's constraints.
 
 Output:
 - verdict: approve | revise
