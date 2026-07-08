@@ -216,7 +216,6 @@ Never write "Z3", "threshold", "lactate", "polarized", "VO2", "neuromuscular",
 "aerobic/anaerobic", "stimulus", "send-off" (say "leave every…") in the output.
 
 SESSION — [date] — [total] m — ~[COMPUTED duration, from the time model]
-Today's focus: [one plain sentence — what we're working on today and why]
 
 WARMUP — [m]
 [lines — each with a plain feel-cue, e.g. "easy, loosen up"]
@@ -240,10 +239,13 @@ distance per block and the session total, in meters.
 
 ---
 WHY TODAY: 2-3 plain sentences — what this session builds and how it fits what
-you've done lately. If you're steering the swimmer away from what they asked for,
-say so directly and plainly here (e.g. "You asked for an easy day — but your last
-three were easy, so today we push.").
-FOCUS ON: 3-4 specific, plain things to think about today.
+you've done lately. This is the ONLY place the rationale appears: never restate the
+set's contents here (no block-by-block replay — the swimmer just read the set). If
+you're steering the swimmer away from what they asked for, say so directly and
+plainly here (e.g. "You asked for an easy day — but your last three were easy, so
+today we push.").
+FOCUS ON: 3-4 specific, plain execution points — things NOT already written in the
+block cues above. Say each thing exactly once, in one place.
 EASE OFF / STOP IF: what to change or stop mid-session, in plain terms (e.g.
 "if your times jump up several seconds and your stroke falls apart on the hard
 set, stop it there — you've already got what it's for, the rest is just junk

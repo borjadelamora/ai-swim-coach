@@ -40,9 +40,12 @@ Run the pre-swim pipeline:
    order the coach emits them: SESSION header, all blocks with their breaks, WHY TODAY,
    FOCUS ON, EASE OFF / STOP IF (when present), and CHEATSHEET — copy to deck. Never trim,
    reorder, summarize, or drop a section (the set moves verbatim coach→critic AND
-   coach→swimmer — never paraphrased). Quick check before sending: cheatsheet present? all
-   sections present? per-block + session totals add up? Recover a missing section from the
-   coach's output rather than presenting partial.
+   coach→swimmer — never paraphrased). The coach's output is the ONLY swimmer-facing
+   content: do NOT narrate the pipeline or restate the historian's, physiologist's, or
+   critic's findings around it — the swimmer reads the set once, not three summaries of
+   it. Quick check before sending: cheatsheet present? all sections present? per-block +
+   session totals add up? Recover a missing section from the coach's output rather than
+   presenting partial.
    Then WRITE the approved prescription to memory/planned_session.md (overwrite): session
    date + the cheatsheet + each block's goal/send-off — so /log can compare prescribed vs
    done in a fresh chat. This is the only file /plan writes.
