@@ -15,16 +15,19 @@ Run the pre-swim pipeline:
    SEQUENTIALLY, because the physiologist reads current_state.md + phase.json (the periodization
    frame) and reasons from the historian's load summary to set today's prescription. (Use the real
    session date for the header; if the swimmer didn't state one, use today's date — don't block on it.)
-2. Give the physiologist's prescription + the swimmer's profile + the historian's
-   recent_set_shapes to the coach. Tell the coach to make today's set MEANINGFULLY
-   DIFFERENT in structure from the recent sessions — vary the main work and at least
-   one other block's format, even when the day's purpose repeats — while keeping the
-   purpose, the swimmer's real paces, and all constraints. Have the coach write the session.
+2. Give the coach: the physiologist's prescription (incl. focus_translation), the
+   swimmer's profile, the historian's recent_set_shapes, AND the swimmer's own input
+   VERBATIM — their time budget and stated focus in their words, never paraphrased
+   (intent dilutes through summary; the coach designs FROM those words). Tell the
+   coach to design from intent per knowledge/set-design.md, meaningfully different
+   in structure from the recent sessions — vary the main work and at least one other
+   block's format, even when the day's purpose repeats — while keeping the purpose,
+   the swimmer's real paces, and all constraints. Have the coach write the session.
 3. Pass the coach's set to the critic VERBATIM — the full readable set AND the
    cheatsheet, exactly as written, never summarized (paraphrasing it once caused a
    false "missing cheatsheet" flag) — together with the physiologist's brief (incl the
-   today_envelope: recovery_verdict, load_target, anti_monotony) so the critic can check
-   envelope-fit and the recovery verdict. If the critic returns "revise" with any blocker,
+   today_envelope: recovery_verdict, load_target, anti_monotony, focus_translation)
+   so the critic can check envelope-fit, the recovery verdict, and intent-match. If the critic returns "revise" with any blocker,
    hand the coach back its OWN prior set verbatim plus ONLY the specific fix, and
    instruct it to edit just that and reprint everything else unchanged (the coach
    tends to drift and rewrite unrequested blocks — don't let it). Re-check; if a blocker

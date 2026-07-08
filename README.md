@@ -13,6 +13,7 @@ The system is deliberately small, file-based, and transparent. There is no datab
 - [Why this exists](#why-this-exists)
 - [How it works](#how-it-works)
 - [The agent pipeline](#the-agent-pipeline)
+- [The knowledge library](#the-knowledge-library)
 - [Commands](#commands)
 - [Set notation](#set-notation)
 - [The memory model](#the-memory-model)
@@ -94,6 +95,14 @@ raw session line (append-only)  ──▶  glance-view row  ──▶  records  
 ```
 
 If a derived view ever disagrees with the raw log, the log wins.
+
+---
+
+## The knowledge library
+
+Agent prompts define roles and guardrails, but the coaching depth lives in [`knowledge/`](knowledge) — a version-controlled library of swimming method: energy systems and training zones, set architecture (how an intent becomes a structure), breath control and underwater work, turns and walls, and pace/time mathematics. The planning agents read the files their task needs: the physiologist reasons from the energy-system model, the coach designs from the set-design method plus the file matching the day's focus, and the critic recomputes the arithmetic.
+
+The library is deliberately generic — it contains method, never athlete data. The design rule: **knowledge holds how to coach; memory holds who is being coached.** When they disagree, memory wins. This separation is what lets the coach translate a stated focus ("I want to hold my breakouts when tired") into a mechanism, a session structure, and a measurable standard — rather than replaying whatever worked last week.
 
 ---
 
@@ -293,6 +302,12 @@ ai-swim-coach/
 │       ├── plan.md
 │       ├── log.md
 │       └── review.md
+├── knowledge/                    The coaching method library (generic — no athlete data).
+│   ├── energy-systems.md
+│   ├── set-design.md
+│   ├── breath-underwater.md
+│   ├── turns-walls.md
+│   └── pace-and-time.md
 └── memory/
     ├── *.template.*              Documented, empty templates.
     ├── sessions.example.jsonl    One synthetic example session.

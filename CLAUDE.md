@@ -101,8 +101,13 @@ clock — these never change; the evolving constraints live in current_state.md)
   Agents are spawned fresh and read the files, so a command run in a new terminal is
   identical to one run mid-conversation — the length of the parent chat does not affect
   output quality.
-- Agent prompts hold reusable coaching METHOD; swimmer-specific facts live in `memory/`.
-  When the two conflict, memory wins.
+- `knowledge/` = the coaching METHOD library (energy systems, set design, breath &
+  underwater work, turns, pace/time math). Generic and swimmer-free; agents read the
+  files their task needs and design FROM them — sets are derived from intent +
+  mechanism, not copied from past sessions. Swimmer-specific facts live in `memory/`;
+  when knowledge and memory conflict, memory wins.
+- Agent prompts hold role, wiring, and judgment order; deep method lives in `knowledge/`;
+  swimmer-specific facts live in `memory/`. When any of these conflict, memory wins.
 
 ## Operating principle
 The swimmer's stated feelings are DATA, not commands. Cross-reference against the
