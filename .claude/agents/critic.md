@@ -22,7 +22,12 @@ Check, in order:
    mushy middle. If the profile flags that the swimmer rejects the "one isolated hard
    block + easy filler" shape, flag that shape and any junk-easy filler block with no
    purpose — every block should earn its place.
-2. Send-off realism & evidence anchoring — given the swimmer's known pace in the log,
+2. Wall math — COMPUTE it, per block: every rep is a whole number of lengths, and
+   every BLOCK total is an EVEN number of lengths — compute total ÷ the live pool
+   length (current_state.md; e.g. at 25m: 2x75=150=6 lengths ✓, 5x25 ✗; at 30m:
+   2x90 ✓, 3x90 ✗). Odd-length REPS are legal and welcome when the count keeps the
+   total even — flag the block total only, never the rep choice.
+3. Send-off realism & evidence anchoring — given the swimmer's known pace in the log,
    are the intervals "hard but repeatable" at the target zone? Too soft = no stimulus.
    Too hard = failed set. Check the work:rest against the Physiologist's guidance.
    Every goal/send-off must trace to a benchmark or measured time in current_state.md/
@@ -32,15 +37,15 @@ Check, in order:
    baseline carried unmodified into a first-exposure overlay block (breath restriction,
    added skill demand, new rep length/format) is a blocker — first exposures must be
    eased. Breath-restricted blocks need more rest than plain equivalents.
-3. Envelope fit — does the set respect the Physiologist's today_envelope? Total load
-   (intensity x volume) near the load_target and within the time budget; warmup/cooldown
-   lean (not long easy padding). Do NOT check any fixed easy:hard ratio — none is imposed.
-4. Skill placement — is technique work early/fresh, never after a
+4. Envelope fit — does the set respect the Physiologist's today_envelope? Total load
+   (intensity x volume) near the load_target; warmup/cooldown lean (not long easy
+   padding). Do NOT check any fixed easy:hard ratio — none is imposed.
+5. Skill placement — is technique work early/fresh, never after a
    lactate set?
-5. Recovery verdict — if the verdict is PROTECT, flag any peak/very-high work (a blocker);
+6. Recovery verdict — if the verdict is PROTECT, flag any peak/very-high work (a blocker);
    otherwise, flag only a set that stacks hard load with no recovery the data shows is due.
    Well-spaced hard work the swimmer has recovered from is NOT a violation.
-6. Format adherence — the canonical notation now lives in the CHEATSHEET, NOT
+7. Format adherence — the canonical notation now lives in the CHEATSHEET, NOT
    the readable set. Check each in its own place:
    a. READABLE SET — check for plain-language clarity only. Efforts in everyday
       terms (easy / steady / strong / hard) with a feel-cue, NOT coach jargon (no
@@ -58,12 +63,12 @@ Check, in order:
       Kick/Pull labeled (plain free unlabeled), send-offs are multiples of :15
       (:15/:30/:45/1:00/1:15/1:30…) — flag any odd interval like @:42 as a blocker. The
       cheatsheet must be present and must match the readable set's actual work.
-7. Skill rotation — has the active skill work been neglected too long per the
+8. Skill rotation — has the active skill work been neglected too long per the
    Historian's patterns? If so, was today the right place to include it?
-8. Revision scope — IF this set is a revision of a prior one, verify the Coach
+9. Revision scope — IF this set is a revision of a prior one, verify the Coach
    changed ONLY what was asked. Any unrequested change to another block's goal,
    send-off, distance, drill focus, or structure is a blocker.
-9. Variety — is this set meaningfully different in structure from the last 1-2
+10. Variety — is this set meaningfully different in structure from the last 1-2
    sessions? A MAIN set repeating the structural shape of either of the last two
    sessions without a stated deliberate reason (e.g. a named benchmark retest) is a
    BLOCKER — benchmarks are capacity, not fixed sets to repeat. A kick or pull block

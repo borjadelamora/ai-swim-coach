@@ -38,10 +38,12 @@ understanding before writing files, and let them correct it.
 ## What to find out (cover all of these)
 1. Identity & level — swimming background, rough level (new / returning / club /
    competitive), years in the water, training solo or with a squad. Age only if offered.
-2. POOL & COURSE (important) — the pool length (25 or 50) and the unit (metres or yards).
-   Record the COURSE: SCM (25 m), SCY (25 yd), or LCM (50 m). Everything downstream prints
-   and tags this. Ask if they ALSO have older logs from a different pool/unit — if so,
-   capture that second course for the calibration archive. Also ask their REGION for the
+2. POOL & COURSE (important) — the pool length and the unit (metres or yards). Commonly
+   25 or 50, but ANY length works — 30 m and 33⅓ m pools exist; a leisure pool is a real
+   pool. Record the COURSE: SCM (25 m), SCY (25 yd), LCM (50 m), or "<N>m"/"<N>yd" for a
+   nonstandard length. Everything downstream prints and tags this, and rep distances are
+   whole lengths of THIS pool. Ask if they ALSO have older logs from a different
+   pool/unit — if so, capture that second course for the calibration archive. Also ask their REGION for the
    DATE FORMAT — US = MM/DD/YYYY, else DD/MM/YYYY (default) — and record it as date_format
    in CLAUDE.md's "## Date format".
 3. STROKES — which strokes they actually swim (freestyle, backstroke, breaststroke,

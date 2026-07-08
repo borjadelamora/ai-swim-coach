@@ -16,16 +16,22 @@ adapt the system to a different swimmer, run `/setup` or edit the profile, not t
   kick, a breathing pattern, or pacing / distance-per-stroke.
 - A skill that has been mastered is retired from the targets — it is no longer trained for.
 
-## Pool and units (set at setup)
-The swimmer's COURSE is chosen during `/setup`: the pool length (25 or 50) and the unit
-(metres or yards). Common courses: SCM (25 m), SCY (25 yd), LCM (50 m). Use it everywhere —
-print the unit explicitly on every session and tag it on every benchmark.
-- `sessions.jsonl` holds the LIVE log, in that course.
+## Pool and units (set at setup; the pool can change later)
+The swimmer's COURSE is chosen during `/setup`: the pool length and the unit (metres or
+yards). Standard courses: SCM (25 m), SCY (25 yd), LCM (50 m) — but ANY length works
+(30 m and 33⅓ m pools exist); record a nonstandard course as "<N>m" / "<N>yd". Use it
+everywhere — print the unit explicitly on every session and tag it on every benchmark.
+Reps are always whole LENGTHS of the live pool (in a 30 m pool the rep menu is
+30/60/90/120… — a "25" or "50" does not exist there).
+- `sessions.jsonl` holds the LIVE log; each session carries its `pool` code, so a
+  mid-log pool change stays unambiguous (current_state.md names the live pool).
 - `archive.jsonl` is OPTIONAL: a frozen baseline of older logs (sometimes from a prior tool,
   sometimes in a different course). Calibration-only; never edited or appended to.
-- Never compare times across courses without converting. A 25 yd length is ~9% shorter than
-  25 m, so yard times run ~10-11% faster than the equivalent metres; long-course (50 m) times
-  run slower than short-course. Tag every figure with its course and keep the two separate.
+- Never compare times across courses without converting: per-length time scales with the
+  length ratio (knowledge/pace-and-time.md; a 25 yd length is ~9% shorter than 25 m, so
+  yard times run ~10-11% faster than the equivalent metres). Converted numbers are
+  provisional — measured swims in the new pool replace them. Tag every figure with its
+  course.
 
 ## Date format (set at setup)
 The swimmer's DATE FORMAT is chosen during `/setup` from their region: `MM/DD/YYYY` (United
@@ -56,11 +62,12 @@ Always print per-block and total distance. Two PERMANENT format rules (pool geom
 clock — these never change; the evolving constraints live in current_state.md):
 - Send-offs MUST be multiples of :15 (:15 / :30 / :45 / 1:00 / 1:15 / 1:30 …) — the
   swimmer tracks the pace clock by :15s; never prescribe an odd interval like @:42.
-- Every block (and the session) finishes on the START wall. That means each block's total
-  distance is a multiple of TWO pool lengths — 50 in a 25-length pool, 100 in a 50 m pool.
-  (In a 25 m pool: 50 / 100 / 150 / 200 … all land back on the start wall; 150 is fine, 6
-  lengths.) Avoid odd-length pieces — a lone 75, or rep-counts that sum to an odd number of
-  lengths like 5x25 — that strand the swimmer on the far wall at a break.
+- Every block (and the session) finishes on the START wall: each block's TOTAL must be
+  an EVEN number of lengths. That is the only wall constraint — ANY rep distance is
+  legal, including odd-length reps, when the count keeps the block total even. In a
+  25 m pool: 2x75 ✓ (6 lengths), 6x25 ✓, but 3x75 ✗ and 5x25 ✗; in a 30 m pool block
+  totals are multiples of 60 (2x90 ✓, 3x90 ✗). Odd-length reps are encouraged as a
+  variety tool — never ban the rep, check the block total.
 
 ## Memory rules
 - `current_state.md` = PRIMARY source for current capacity (numbers + bounds). Read

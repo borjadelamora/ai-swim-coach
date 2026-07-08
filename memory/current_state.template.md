@@ -7,13 +7,15 @@
 last_updated: DD/MM/YYYY
 source: LIVE. The source of truth for current capacity. The logger rewrites it after each
 session; the coach reads it before prescribing.
-course: <your course, set at setup — SCM (25 m) / SCY (25 yd) / LCM (50 m)>. Every benchmark
-is in this course. An imported archive in a different course is calibration-only; never
-compare across courses without converting.
+course: <your course, set at setup — SCM (25 m) / SCY (25 yd) / LCM (50 m), or "<N>m"
+for a nonstandard pool (e.g. 30m)>. Every benchmark is in this course, and rep
+distances are whole lengths of this pool. An imported archive in a different course is
+calibration-only; never compare across courses without converting.
 
 ## Standing rules (apply to every prescription)
 - Format (permanent, defined in CLAUDE.md): send-offs are :15 multiples; every block
-  finishes on the START wall — its total is a multiple of two pool lengths.
+  finishes on the START wall — its total is an EVEN number of lengths (any rep
+  distance is legal when the count keeps the total even).
 - <Any EVOLVING constraint specific to the swimmer right now — e.g. a skill-integration
   rule, a pace/technique decoupling rule, no stacking two maximal blocks. The permanent
   format rules live in CLAUDE.md and are NOT repeated here.>

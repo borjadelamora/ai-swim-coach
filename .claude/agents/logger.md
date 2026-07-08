@@ -36,7 +36,8 @@ enemy.
 Schema (distances are in the swimmer's configured course; see current_state.md):
 { "id": n (increment), "date": in the configured date format (CLAUDE.md; e.g. DD/MM/YYYY)
     (REQUIRED, real date, never null),
-  "pool": the course code (e.g. "SCM"|"SCY"|"LCM"), "duration_min": n,
+  "pool": the LIVE pool's course code from current_state.md (e.g. "SCM"|"SCY"|"LCM",
+    or "<N>m"/"<N>yd" for a nonstandard length like "30m"), "duration_min": n,
   "total": n (sum of measured blocks only), "rpe": 1-10|null, "rating": 1-5|null,
   "turns_in_sets": "wall"|"flip"|"mixed", "pain": null | "short factual string",
   "note": null | "session-level feel/context in the swimmer's WORDS (e.g. 'felt strong',
@@ -69,8 +70,9 @@ Under the live table, append: | id | date | dur | total | headline efforts (2-4 
 splits) | rpe / rating | turns |. Append only; never rewrite past rows.
 
 ## (3) prs.json — update only if a record fell
-Tag every new record with its course (e.g. "SCM"/"SCY"/"LCM"). Never overwrite or regress
-an imported archive's records; add live-course records alongside them. RECORDS ONLY —
+Tag every new record with its course (e.g. "SCM"/"SCY"/"LCM"/"30m"). Never overwrite or
+regress an imported archive's records or a prior course's records; add live-course
+records alongside them (a pool change starts a new record set — distances differ). RECORDS ONLY —
 genuine bests (condition-tagged if swum under an overlay); submaximal capacity REFERENCES
 live in current_state.md, never here. Check every timed block against standing records —
 a best under any condition counts.

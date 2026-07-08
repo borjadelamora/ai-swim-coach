@@ -167,7 +167,7 @@ Breaks between blocks are marked separately from the within-block send-off:
 Two **permanent** format rules encode the geometry of the pool and the pace clock:
 
 - **Send-offs are multiples of :15** (`:15 / :30 / :45 / 1:00 / 1:15 …`), because the clock is tracked in fifteen-second increments.
-- **Every block finishes on the start wall.** Each block's total distance is a multiple of two pool lengths (50 m in a 25 m pool, 50 yd in a 25 yd pool, 100 m in a 50 m pool), so the swimmer is never stranded at the far wall during a break.
+- **Every block finishes on the start wall.** Each block's total must be an *even number of lengths*, so the swimmer is never stranded at the far wall during a break. That is the only wall constraint — any rep distance is legal, including odd-length reps, when the count keeps the block total even: in a 25 m pool `2x75` works (six lengths) while `3x75` and `5x25` do not.
 
 These constraints are enforced by the critic, not left to chance.
 
@@ -192,7 +192,7 @@ There is a strict distinction between the **source of truth** and **derived view
 
 The raw logs are the irreplaceable record; every derived view can be rebuilt from them if it drifts or is lost. This is why the logger always writes the raw line first, arithmetic-checks it (block maths must equal the recorded distances), and never edits a past line — corrections are appended `amends` objects.
 
-Your **course** (pool length and unit) is chosen at setup: short-course metres (25 m), short-course yards (25 yd), or long-course metres (50 m). Every figure is tagged with it. If you import older logs from a different course, they are kept as a separate, frozen archive and never compared with live data without applying the conversion — a small but realistic detail that prevents a whole class of silent errors.
+Your **course** (pool length and unit) is chosen at setup: short-course metres (25 m), short-course yards (25 yd), long-course metres (50 m) — or any other length; 30 m outdoor pools are real pools, and rep distances simply become whole lengths of whatever you swim in. Every figure is tagged with its course, and each logged session records its pool, so even a mid-log pool change stays unambiguous. If you import older logs from a different course, they are kept as a separate, frozen archive and never compared with live data without applying the conversion — a small but realistic detail that prevents a whole class of silent errors.
 
 ---
 
