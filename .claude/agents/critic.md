@@ -22,11 +22,16 @@ Check, in order:
    mushy middle. If the profile flags that the swimmer rejects the "one isolated hard
    block + easy filler" shape, flag that shape and any junk-easy filler block with no
    purpose — every block should earn its place.
-2. Wall math — COMPUTE it, per block: every rep is a whole number of lengths, and
-   every BLOCK total is an EVEN number of lengths — compute total ÷ the live pool
-   length (current_state.md; e.g. at 25m: 2x75=150=6 lengths ✓, 5x25 ✗; at 30m:
-   2x90 ✓, 3x90 ✗). Odd-length REPS are legal and welcome when the count keeps the
-   total even — flag the block total only, never the rep choice.
+2. Wall math & time budget — COMPUTE both:
+   a. Per block: every rep is a whole number of lengths, and every BLOCK total is an
+      EVEN number of lengths — compute total ÷ the live pool length
+      (current_state.md; e.g. at 25m: 2x75=150=6 lengths ✓, 5x25 ✗; at 30m: 2x90 ✓,
+      3x90 ✗). Odd-length REPS are legal and welcome when the count keeps the total
+      even — flag the block total only, never the rep choice.
+   b. Recompute the session duration with the time model in knowledge/pace-and-time.md
+      (send-off arithmetic, breath-rest seconds, drill minutes, easy-swim pace,
+      breaks, overhead). Outside [budget − 5 min, budget + 2 min] is a blocker —
+      under-filling especially (it leaves the swimmer inventing work poolside).
 3. Send-off realism & evidence anchoring — given the swimmer's known pace in the log,
    are the intervals "hard but repeatable" at the target zone? Too soft = no stimulus.
    Too hard = failed set. Check the work:rest against the Physiologist's guidance.

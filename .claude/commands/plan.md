@@ -19,15 +19,18 @@ Run the pre-swim pipeline:
    swimmer's profile, the historian's recent_set_shapes, AND the swimmer's own input
    VERBATIM — their time budget and stated focus in their words, never paraphrased
    (intent dilutes through summary; the coach designs FROM those words). Tell the
-   coach to design from intent per knowledge/set-design.md, meaningfully different
+   coach to (a) design from intent per knowledge/set-design.md, meaningfully different
    in structure from the recent sessions — vary the main work and at least one other
    block's format, even when the day's purpose repeats — while keeping the purpose,
-   the swimmer's real paces, and all constraints. Have the coach write the session.
+   the swimmer's real paces, and all constraints, and (b) FILL the stated time budget
+   using the time model (computed duration in the header). Have the coach write the
+   session.
 3. Pass the coach's set to the critic VERBATIM — the full readable set AND the
    cheatsheet, exactly as written, never summarized (paraphrasing it once caused a
    false "missing cheatsheet" flag) — together with the physiologist's brief (incl the
    today_envelope: recovery_verdict, load_target, anti_monotony, focus_translation)
-   so the critic can check envelope-fit, the recovery verdict, and intent-match. If the critic returns "revise" with any blocker,
+   AND the swimmer's stated time budget, so the critic can check envelope-fit, the
+   recovery verdict, intent-match, wall math, and the computed duration. If the critic returns "revise" with any blocker,
    hand the coach back its OWN prior set verbatim plus ONLY the specific fix, and
    instruct it to edit just that and reprint everything else unchanged (the coach
    tends to drift and rewrite unrequested blocks — don't let it). Re-check; if a blocker

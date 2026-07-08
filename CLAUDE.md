@@ -58,8 +58,11 @@ Break between blocks (a set is a sequence of blocks):
   `— break 2-3 min —`  timed range (firmer sets)
   This between-block break is SEPARATE from the within-block send-off `@`.
 
-Always print per-block and total distance. Two PERMANENT format rules (pool geometry +
-clock — these never change; the evolving constraints live in current_state.md):
+Always print per-block and total distance, plus the session's COMPUTED duration — the
+coach fills the swimmer's stated time budget using the time model in
+knowledge/pace-and-time.md (chronic under-filling is the failure mode; the critic
+recomputes). Two PERMANENT format rules (pool geometry + clock — these never change;
+the evolving constraints live in current_state.md):
 - Send-offs MUST be multiples of :15 (:15 / :30 / :45 / 1:00 / 1:15 / 1:30 …) — the
   swimmer tracks the pace clock by :15s; never prescribe an odd interval like @:42.
 - Every block (and the session) finishes on the START wall: each block's TOTAL must be

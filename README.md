@@ -120,7 +120,7 @@ Run on first use to build your system, and again later only when you want to rec
 
 ### `/plan`
 
-Plans today's session. Input is free-form — typically a time budget, optionally with how you feel ("45 minutes, legs feel heavy"). The pipeline reads the recent log, sets a physiological target, writes a set that is meaningfully different in structure from recent sessions, and runs it past the critic before presenting it. Stated feelings are weighed against the data; if you ask for an easy day after three easy days, you will be told why today is not easy.
+Plans today's session. Input is free-form — typically a time budget, optionally with how you feel or what you want to work on ("45 minutes, legs feel heavy", "60 min, I want to hold my breakouts when tired"). The pipeline reads the recent log, translates your stated focus into a physiological target, designs a set from that intent (meaningfully different in structure from recent sessions), computes the session's expected duration so it actually fills your time budget, and runs it past the critic — which recomputes the arithmetic — before presenting it. Stated feelings are weighed against the data; if you ask for an easy day after three easy days, you will be told why today is not easy.
 
 The output is two things: a **readable set** in plain language with effort cues and a short rationale, and a terse **cheatsheet** in the athlete's shorthand to copy onto a waterproof deck card. The approved prescription is also saved to `memory/planned_session.md`, so `/log` can later compare prescribed against done without needing the chat history.
 
